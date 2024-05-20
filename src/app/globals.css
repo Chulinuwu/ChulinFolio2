@@ -19,6 +19,8 @@
 body {
   background: rgb(255,210,210);
   background: linear-gradient(180deg, rgba(255,210,210,1) 0%, rgba(226,180,231,0.75) 63%, rgba(192,142,255,0.44) 100%);
+  background-size: 100% auto;
+  background-attachment: fixed;
 }
 
 @layer utilities {
