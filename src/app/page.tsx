@@ -2,55 +2,22 @@ import Image from "next/image";
 import circleImg from "../../public/img/circle.png";
 import pekoraImg from "../../public/img/pekora.png";
 import 'animate.css';
-
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Image className="absolute lg:w-[600px] lg:h-[600px] sm:w-[70px] sm:h-[200px]" src={circleImg} alt={"circle"} width={0} height={0}>
-        
-      </Image>
+    <main className="flex min-h-screen flex-col">
+      <div className="items-center justify-between flex flex-col pt-24 px-24">
+      <Image className="absolute w-[600px] h-[600px] flex" src={circleImg} alt={"circle"} width={0} height={0} />
       <Image
         src={pekoraImg}
         alt="peko"
         width={0}
         height={0}
-        className="absolute w-[718px] h-auto animate__animated animate__bounce animate__delay-1s"></Image>
+        className="flex w-[718px] h-auto animate__animated animate__bounce animate__delay-1s"
+      />
+      </div>
+      <Footer />
     </main>
   );
 }
-/* Ellipse 1 */
-
-// position: absolute;
-// width: 600px;
-// height: 600px;
-// left: 420px;
-// top: 212px;
-
-// background: #FFFFFF;
-// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* Ellipse 1 */
-
-// position: absolute;
-// width: 600px;
-// height: 600px;
-// left: 420px;
-// top: 212px;
-
-// background: #FFFFFF;
-// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* Usada-Pekora_pr-img_05-718x1440 1 */
-
-// position: absolute;
-// width: 718px;
-// height: 1440px;
-// left: 353px;
-// top: 159px;
-
-// background: url(Usada-Pekora_pr-img_05-718x1440.png);
-// filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
