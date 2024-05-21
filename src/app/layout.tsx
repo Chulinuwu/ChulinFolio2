@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Navbarvertical from "@/components/navbarvertical";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,8 @@ export default function RootLayout({
 
       </Head>
       <body className={inter.className}>
-        <Navbar/>
+        {/* <Navbar/> */}
+        <Navbarvertical/>
         {children}
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>
