@@ -41,7 +41,7 @@ export default function NavbarVertical() {
       }
     };
   return (
-    <div className='fixed'>
+    <div className='z-50 fixed'>
       <div className="rounded-r bg-gray-900 xl:hidden flex justify-between w-full p-6 items-center ">
 
   <div className="flex justify-between  items-center space-x-3">

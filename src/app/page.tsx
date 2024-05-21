@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <div className="items-center justify-between flex flex-col pt-24 px-24">
+      <div className="items-center justify-between flex flex-col">
       <Image className="absolute w-[600px] h-[600px] flex" src={circleImg} alt={"circle"} width={0} height={0} />
       <Image
         src={pekoraImg}
