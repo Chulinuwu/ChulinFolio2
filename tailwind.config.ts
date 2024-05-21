@@ -17,6 +17,9 @@ const config: Config = {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif']
       },
+      textShadow: {
+        'default': '2px 2px 4px rgba(0, 0, 0, 0.5)',
+      },
     },
     gradients: {
       'red-blue': ['#FFD2D2', '#E2B4E7 63%', '#C08EFF 100%']
@@ -26,7 +29,7 @@ const config: Config = {
   plugins: [
     require('tailwindcss-gradients'),
     require('flowbite/plugin'),
-
+    require('tailwindcss-textshadow')
     // ...
   ],
 };

@@ -3,7 +3,7 @@ import { SocialIcon } from "react-social-icons/component";
 
 export default function footer() {
   return (
-    <div className="flex flex-col bg-white w-full p-24 justify-center item-center text-center">
+    <div className="flex flex-col text-shadow-md bg-white w-full p-24 justify-center item-center text-center">
       <p className="flex font-poppins font-bold text-red-400 text-2xl justify-center">
         This Website is made by Jirameth Wannasiwaporn, feel free to contact me
         anytime :D
