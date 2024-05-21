@@ -28,7 +28,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <Navbar/> */}
         <Navbarvertical/>
+        <div className='ml-[256px]'>
         {children}
+        </div>
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>
     </html>
