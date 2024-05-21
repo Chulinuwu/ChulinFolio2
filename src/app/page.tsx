@@ -14,7 +14,7 @@ export default function Home() {
         alt="peko"
         width={0}
         height={0}
-        className="flex w-[718px] h-auto animate__animated animate__bounce animate__delay-1s"
+        className="flex w-[718px] h-auto hover:animate__animated hover:animate-pulse z-30"
       />
       </div>
       <Footer />
