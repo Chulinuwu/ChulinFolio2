@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Navbarvertical from "@/components/navbarvertical";
+import Banner from "@/components/banner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +20,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+  
   return (
     <html>
       <Head>
@@ -25,8 +30,12 @@ export default function RootLayout({
 
       </Head>
       <body className={inter.className}>
-        <Navbar/>
+     <Banner/>
+
+        <Navbarvertical/> 
+ 
         {children}
+    
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>
     </html>
