@@ -1,11 +1,15 @@
 import Head from 'next/head';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Josefin_Sans } from 'next/font/google';
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Josefin_Sans({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 
 export const metadata: Metadata = {
@@ -25,7 +29,6 @@ export default function RootLayout({
 
       </Head>
       <body className={inter.className}>
-        <Navbar/>
         {children}
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>

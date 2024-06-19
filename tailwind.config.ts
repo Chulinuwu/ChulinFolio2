@@ -20,6 +20,13 @@ const config: Config = {
       textShadow: {
         'default': '2px 2px 4px rgba(0, 0, 0, 0.5)',
       },
+      colors: {
+        'ppnew' : '#9C71F6',
+        'pinknew' : '#F56565',
+        'pinktext' : '#FF9393',
+        'rednew' : '#FF3939',
+        'graynew': '#848484',
+      },
     },
     gradients: {
       'red-blue': ['#FFD2D2', '#E2B4E7 63%', '#C08EFF 100%']
