@@ -42,7 +42,7 @@ export default function NavbarVertical() {
     }
   };
   return (
-    <div className="z-50 fixed max-sm:w-full flex flex-col ">
+    <div className="z-50 fixed max-sm:w-full flex flex-col pt-[80px] ">
       <div className="navbar rounded-r bg-gray-900 xl:hidden flex justify-between w-full p-6 items-center ">
         <div className="flex justify-between  items-center space-x-3">
           svg

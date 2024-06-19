@@ -6,7 +6,8 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    
+    <main className="flex min-h-screen flex-col pl-[256px] pt-[80px]">
       <div className="items-center justify-between flex flex-col">
       <Image className="absolute w-[600px] h-[600px] flex" src={circleImg} alt={"circle"} width={0} height={0} />
       <Image
