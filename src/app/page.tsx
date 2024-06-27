@@ -18,11 +18,11 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [windowSize, setWindowSize] = useState<{
-    width: number | undefined;
-    height: number | undefined;
+    width: number ;
+    height: number ;
   }>({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function Home() {
       <div className="w-full  h-full">
         <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
           <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
-            {window.innerWidth < 768 && (
+            {typeof window !== 'undefined' &&  windowSize.width < 768 && (
               <div className="w-full h-full flex justify-center">
                 <Image
                   src={pekomobile}
@@ -136,14 +136,14 @@ export default function Home() {
             className="w-auto h-auto animate__bounceInRight animated  mt-[80px]   max-md:w-0 "
           />
         </div>
-        {window.innerWidth > 1024 && (
+        {typeof window !== 'undefined' &&  windowSize.width > 1024 && (
           <div className="px-20 pt-20 w-full flex justify-between h-full">
             <div className="w-[300px] h-[80px]flex-row flex justify-center items-center border-rednew border-2 rounded-lg  max-lg:w-[45%] mr-2 bg-white">
               <div className="w-full h-full flex justify-center items-center">
                 <div className="  flex items-center text-xl font-semibold text-rednew w-full justify-center space-x-5  text-left">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-7 w-7"
+                    className="h-7 w-7 "
                     fill="currentColor"
                     style={{ color: "#FF3939" }}
                     viewBox="0 0 24 24"
@@ -217,7 +217,7 @@ export default function Home() {
             </div>
           </div>
         )}
-        {window.innerWidth <= 1024 && (
+        {typeof window !== 'undefined' &&  windowSize.width <= 1024 && (
           <div className="px-20 pt-20 w-full flex justify-between flex-col h-full">
             <div className="flex flex-row w-full justify-center mb-8">
               <div className="w-[350px] h-[80px]  max-sm:h-[65px]   flex-row flex justify-center items-center border-rednew border-2 rounded-lg  max-lg:w-[45%] mr-2 bg-white">
@@ -285,7 +285,9 @@ export default function Home() {
                     <svg
                       className="h-7 w-7"
                       fill="currentColor"
-                      style={{ color: "#FF3939" }}
+                      style={{ color: "#FF3939"
+                        
+                       }}
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                       fillRule="evenodd"
