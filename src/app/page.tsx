@@ -218,7 +218,7 @@ export default function Home() {
           </div>
         )}
         {typeof window !== 'undefined' &&  windowSize.width <= 1024 && (
-          <div className="px-20 pt-20 w-full flex justify-between flex-col h-full">
+          <div className="px-20 pt-20 max-sm:px-10 w-full flex justify-between flex-col h-full">
             <div className="flex flex-row w-full justify-center mb-8">
               <div className="w-[350px] h-[80px]  max-sm:h-[65px]   flex-row flex justify-center items-center border-rednew border-2 rounded-lg  max-lg:w-[45%] mr-2 bg-white">
                 <div className="w-full h-full flex justify-center items-center">
