@@ -180,7 +180,7 @@ export default function Home() {
                 Github
               </button>
 
-              <button className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse">
+              <button onClick={()=>window.open('https://mail.google.com/mail/u/0/#all?compose=CllgCJTMXKMXXTFTxWKFLrhspLPdGLfJMjDcWXcbbvDqrTXZhqqXMSsmMHltdHmSKcwcqTBxVcg', '_blank')}  className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7"
@@ -249,7 +249,7 @@ export default function Home() {
               </div>
 
               <div className="flex flex-row w-full justify-center">
-                <button className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] px-10 py-4 max-sm:px-5  border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse">
+                <button onClick={()=>window.open('https://mail.google.com/mail/u/0/#all?compose=CllgCJTMXKMXXTFTxWKFLrhspLPdGLfJMjDcWXcbbvDqrTXZhqqXMSsmMHltdHmSKcwcqTBxVcg', '_blank')} className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] px-10 py-4 max-sm:px-5  border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-7 w-7 "
