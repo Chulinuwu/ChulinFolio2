@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Josefin_Sans } from 'next/font/google';
 import "./globals.css";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Navbarvertical from "@/components/navbarvertical";
 import Banner from "@/components/banner";

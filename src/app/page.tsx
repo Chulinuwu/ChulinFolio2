@@ -2,7 +2,6 @@
 import Image from "next/image";
 import "animate.css";
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
 import peko from "../../public/img/pekora.png";
 import pic1 from "../../public/img/pic1.png";
 import pekomobile from "../../public/img/pekoramobile.png";
