@@ -168,20 +168,20 @@ export default function Home() {
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
             <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
               {typeof window !== "undefined" &&
-                windowSize.width < 768 &&
+                windowSize.width < 1024 &&
                 isLoaded && (
-                  <div className="h-full flex justify-center max-md:w-full">
+                  <div className="h-full flex justify-center max-lg:w-[100%] max-lg:h-[80%]">
                     <Image
                       src={pekomobile}
                       alt={"pekoraImg"}
                       height={0}
                       width={0}
-                      className="w-auto h-auto  mt-[50px] max-md:pt-[30px]  max-md:w-[200px] sm:mt-0 "
+                      className="w-auto h-auto  mt-[50px] max-lg:pt-[30px] max-lg:w-1/2 max-lg:h-auto max-md:w-[200px] sm:mt-0 "
                     />
                   </div>
                 )}
-
-              <div className="text-white text-5xl  font-bold mt-[20%] max-md:mt-10 max-lg:mt-[30%] mb-10 max-lg:text-4xl max-md:text-xl max-md:text-center">
+              <div className="w-full h-full flex flex-col max-lg:mb-20 max-md:mb-0 ">
+              <div className="text-white text-5xl  font-bold mt-[30%] max-lg:mt-10 max-md:mt-10 mb-10 max-lg:text-4xl max-md:text-xl max-lg:text-center">
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed once, initially
@@ -198,11 +198,12 @@ export default function Home() {
                   repeat={Infinity}
                 />
               </div>
-              <div className="text-white animate__bounceInRight animated text-3xl font-bold max-md:text-lg max-md:text-center max-lg:text-lg">
+              <div className="text-white animate__bounceInRight animated text-3xl font-bold max-lg:text-lg max-lg:text-center ">
                 Made this website to introduce myself to you {"<3"}
               </div>
-              <div className="text-white text-2xl font-bold animate__bounceInRight animated max-md:text-base max-md:text-center max-lg:text-lg   mt-3">
+              <div className="text-white text-2xl font-bold animate__bounceInRight animated max-lg:text-base max-lg:text-center   mt-3">
                 Developer / Digital Artist / UXUI Designer
+              </div>
               </div>
 
               {/* <div className="w-full h-full flex flex-row max-md:flex-col my-5 max-md:mt-12 justify-start max-md:justify-center max-md:w-full">
@@ -249,14 +250,15 @@ export default function Home() {
               </div>
             </div> */}
             </div>
-
+<div className="w-full h-full max-lg:w-0 mt- flex justify-end bottom-0">
             <Image
               src={pekoraImg}
               alt={"pekoraImg"}
               height={0}
               width={0}
-              className="w-auto h-auto animate__bounceInRight animated  mt-[80px]   max-md:w-0 "
+              className="w-auto h-auto mt-[80px]   max-lg:w-0 "
             />
+            </div>
           </div>
           {typeof window !== "undefined" && windowSize.width > 1024 && (
             <div className="px-20 pt-20 w-full flex justify-between h-full">
@@ -323,7 +325,7 @@ export default function Home() {
                 </svg>
                 Gmail
               </button>
-              <button className="w-[300px] group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-700 to-gray-700 hover:after:animate-pulse">
+              <button className="w-1/3 group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-700 to-gray-700 hover:after:animate-pulse">
                 <svg
                   className="h-7 w-7"
                   fill="currentColor"
