@@ -6,13 +6,14 @@ import Navbar from "@/components/navbar";
 import peko from "../../public/img/pekora.png";
 import pic1 from "../../public/img/pic1.png";
 import pekomobile from "../../public/img/pekoramobile.png";
+import anan1 from "../../public/img/anan1.jpg";
 import { useState, useEffect } from "react";
 import "animate.css";
-import { useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 export default function Home() {
-
   const router = useRouter();
 
   const [windowSize, setWindowSize] = useState<{
@@ -48,11 +49,123 @@ export default function Home() {
     setIsClient(true);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // if you want a smooth scrolling effect
+    });
+  };
+
+  const scrollToAbout= () => {
+    const about = document.getElementById('about');
+    if (about) {
+      about.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [navbarHeight, setNavbarHeight] = useState('h-20');
+  const [textSize, setTextSize] = useState('text-2xl');
+  const [navbarColor, setNavbarColor] = useState('bg-opacity-0');
+  const [textColor, setTextColor] = useState('text-white');
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 0;
+      if (show) {
+        setIsScrolled(true);
+        setNavbarHeight('h-16');
+        setTextSize('text-xl');
+        setTextColor('text-rednew');
+        setNavbarColor('bg-opacity-100');
+      } else {
+        setIsScrolled(false);
+        setNavbarHeight('h-20');
+        setTextSize('text-2xl');
+        setTextColor('text-white');
+        setNavbarColor('bg-opacity-0');
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <main className="w-full flex flex-col">
       {isClient && (
         <div className="w-full  h-full">
-          <Navbar />
+       <nav
+      className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
+    >
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-[100%]">
+        <a
+          href="#"
+          className="flex items-center space-x-3 rtl:space-x-reverse "
+        >
+          {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" /> */}
+          <span
+            className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
+          >
+            Chulinxz
+          </span>
+        </a>
+        {/* <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <span className="sr-only font-semibold">Open main menu</span>
+        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button> */}
+        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
+            <li>
+              <div
+                onClick={scrollToTop}
+                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold aria-current="page`}
+              >
+                Home
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={scrollToAbout}
+                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+              >
+                About
+              </div>
+            </li>
+            <li>
+              <a
+                href="#"
+                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+              >
+                Pricing
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
             <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
               {typeof window !== "undefined" &&
@@ -148,7 +261,12 @@ export default function Home() {
           </div>
           {typeof window !== "undefined" && windowSize.width > 1024 && (
             <div className="px-20 pt-20 w-full flex justify-between h-full">
-              <button onClick={()=>window.open('https://www.instagram.com/vyovyo___', '_blank')} className="w-[300px] mr-5 group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-red-600 to-yellow-200 hover:after:animate-pulse">
+              <button
+                onClick={() =>
+                  window.open("https://www.instagram.com/vyovyo___", "_blank")
+                }
+                className="w-[300px] mr-5 group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-red-600 to-yellow-200 hover:after:animate-pulse"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7 "
@@ -161,7 +279,12 @@ export default function Home() {
                 Instagram
               </button>
 
-              <button onClick={()=>window.open('https://github.com/Chulinuwu/', '_blank')}  className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-sky-900 to-black hover:after:animate-pulse">
+              <button
+                onClick={() =>
+                  window.open("https://github.com/Chulinuwu/", "_blank")
+                }
+                className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-sky-900 to-black hover:after:animate-pulse"
+              >
                 <svg
                   className="w-6 h-6 fill-neutral-50"
                   height="100"
@@ -180,7 +303,12 @@ export default function Home() {
                 Github
               </button>
 
-              <button onClick={()=>window.open('mailto:ananzxzoxd@gmail.com', '_blank')}  className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse">
+              <button
+                onClick={() =>
+                  window.open("mailto:ananzxzoxd@gmail.com", "_blank")
+                }
+                className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7"
@@ -215,7 +343,12 @@ export default function Home() {
           {typeof window !== "undefined" && windowSize.width <= 1024 && (
             <div className="px-20 pt-20 max-sm:px-10 w-full flex justify-between flex-col h-full">
               <div className="flex flex-row w-full justify-center mb-8">
-                <button onClick={()=>window.open('https://www.instagram.com/vyovyo___', '_blank')} className="w-[300px] mr-5 group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] max-sm:px-5 max-sm:py-5 px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-red-600 to-yellow-200 hover:after:animate-pulse">
+                <button
+                  onClick={() =>
+                    window.open("https://www.instagram.com/vyovyo___", "_blank")
+                  }
+                  className="w-[300px] mr-5 group flex justify-center items-center  gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] max-sm:px-5 max-sm:py-5 px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-red-600 to-yellow-200 hover:after:animate-pulse"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-7 w-7 max-sm:w-5 max-sm:h-5    "
@@ -228,7 +361,12 @@ export default function Home() {
                   <p className="max-sm:text-sm">Instagram</p>
                 </button>
 
-                <button onClick={()=>window.open('https://github.com/Chulinuwu/', '_blank')}  className="w-[300px] group  flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] px-10 py-4 max-sm:px-5  border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-sky-900 to-black hover:after:animate-pulse">
+                <button
+                  onClick={() =>
+                    window.open("https://github.com/Chulinuwu/", "_blank")
+                  }
+                  className="w-[300px] group  flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] px-10 py-4 max-sm:px-5  border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-sky-900 to-black hover:after:animate-pulse"
+                >
                   <svg
                     className="w-7 h-7 fill-neutral-50 max-sm:w-5 max-sm:h-5"
                     height="100"
@@ -249,7 +387,12 @@ export default function Home() {
               </div>
 
               <div className="flex flex-row w-full justify-center">
-                <button onClick={()=>window.open('mailto:ananzxzoxd@gmail.com', '_blank')} className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] px-10 py-4 max-sm:px-5  border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse">
+                <button
+                  onClick={() =>
+                    window.open("mailto:ananzxzoxd@gmail.com", "_blank")
+                  }
+                  className="w-[300px] group mr-5 flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2   relative bg-[#DAA35E] px-10 py-4 max-sm:px-5  border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-green-500 hover:after:animate-pulse"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-7 w-7 "
@@ -283,22 +426,22 @@ export default function Home() {
             </div>
           )}
 
-          <div className=" m-20 flex flex-row max-lg:flex-col">
-            <div className="w-full">
+          <div className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 " id="about">
+            <div className="w-full col-span-1 flex justify-center items-center p-20">
               <Image
                 src={pic1}
                 alt={"pekoraImg"}
                 height={0}
                 width={0}
-                className="w-[100%] max-lg:w-full h-auto"
+                className="w-[100%] max-lg:w-full h-auto flex justify-center items-center rotate-3 rounded-2xl shadow-xl m-2"
               />
             </div>
-            <div className="h-[100vh] w-full  ml-20 max-lg:ml-0 max-lg:mt-20 max-sm:mt-1 flex flex-col">
-              <div className="flex justify-center items-center w-full h-full flex-col">
+            <div className=" w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1 col-span-1">
+              <div className="flex justify-center items-center w-full h-full flex-col p-20">
                 <div className="text-4xl text-pinknew flex flex-row items-center">
                   <div className="w-5 h-1 bg-pinknew mr-5"></div>About Me
                 </div>
-                <div className="text-2xl mt-10">
+                <div className="text-xl mt-10">
                   An-An is a current student in Computer Engineering who loves
                   coding, drawing, and designing. I’m interested in creating new
                   innovations and possesses strong leadership skills, along with
@@ -308,38 +451,61 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full mt-10 p-20 h-[700px]">
-            <div className="flex w-full h-full flex-col">
-              <div className="text-4xl text-pinknew flex flex-row items-center justify-center">
+          <div className="w-full px-20 h-full">
+            <div className="grid grid-cols-2 w-full h-full">
+              <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 justify-center">
                 <div className="w-5 h-1 bg-pinknew mr-5"></div>About Me 2
               </div>
-              <div className="w-full h-full mt-20 flex flex-row max-sm:flex-col">
-                <div className="bg-gray-500 w-[50%] max-sm:w-full h-[70vh] "></div>
-                <div className="text-2xl mt-10 w-[50%] pl-20 h-full max-sm:w-full max-sm:pl-0 flex ">
-                  An-An is a current student in Computer Engineering who loves
-                  coding, drawing, and designing. I’m interested in creating new
-                  innovations and possesses strong leadership skills, along with
-                  the ability to effectively solve problems on the spot.
+              <div className="w-full h-full mt-20 col-span-2 grid grid-cols-2">
+                <div className="rounded-2xl w-full max-md:pb-10 h-auto rotate-[-5deg] p-20 col-span-1">
+                  <Image
+                    src={anan1}
+                    alt={"pekoraImg"}
+                    height={0}
+                    width={0}
+                    className="w-auto h-auto rounded-2xl object-contain animate__bounceInRight animated "
+                  />
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="w-full mt-10 p-20 h-[700px]">
-            <div className="flex w-full h-full flex-col">
-              <div className="w-full h-full flex flex-row max-sm:flex-col">
-                <div className="bg-gray-500 w-[50%] max-sm:w-full h-[70vh] "></div>
-                <div className="text-2xl mt-10 w-[50%] pl-20 h-full max-sm:w-full max-sm:pl-0 flex ">
-                  An-An is a current student in Computer Engineering who loves
-                  coding, drawing, and designing. I’m interested in creating new
-                  innovations and possesses strong leadership skills, along with
-                  the ability to effectively solve problems on the spot.
+                <div className="text-xl w-full pl-20 h-full max-lg:w-full max-lg:pl-0 flex max-lg:text-lg max-md:text-base justify-center items-center">
+                  <p>
+                    From a young age, I demonstrated a natural aptitude for
+                    technology and innovation. I would spend hours dismantling
+                    gadgets to understand their inner workings and would often
+                    sketch out new inventions in my notebooks. This curiosity
+                    and creativity have only grown stronger over the years. I am
+                    known for my exceptional leadership skills, often taking the
+                    helm in group projects and leading my team to success. My
+                    ability to remain calm under pressure and solve problems on
+                    the spot has earned me the respect and admiration of my
+                    peers and professors alike. From a young age, I demonstrated
+                    a natural aptitude for technology and innovation. I would
+                    spend hours dismantling gadgets to understand their inner
+                    workings and would often sketch out new inventions in my
+                    notebooks. This curiosity and creativity have only grown
+                    stronger over the years. I am known for my exceptional
+                    leadership skills, often taking the helm in group projects
+                    and leading my team to success. My ability to remain calm
+                    under pressure and solve problems on the spot has earned me
+                    the respect and admiration of my peers and professors alike.
+                  </p>
                 </div>
+                {/* <div className="w-full h-full bg-black">
+                </div> */}
               </div>
             </div>
           </div>
         </div>
       )}
+
+      <div
+        className=" bg-red-400 w-[50px] h-[50px] fixed right-4 bottom-4 shadow-2xl rounded-md hover:scale-110 transition-transform"
+        onClick={scrollToTop}
+      >
+        <div className="flex justify-center items-center w-full h-full text-white">
+          <ArrowUpwardIcon />
+        </div>
+      </div>
     </main>
   );
 }
