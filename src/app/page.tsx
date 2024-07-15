@@ -453,12 +453,12 @@ export default function Home() {
           </div>
 
           <div className="w-full px-20 h-full">
-            <div className="grid grid-cols-2 w-full h-full">
+            <div className="grid grid-cols-2 max-md:grid-cols-1 w-full h-full">
               <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 justify-center">
                 <div className="w-5 h-1 bg-pinknew mr-5"></div>About Me 2
               </div>
-              <div className="w-full h-full mt-20 col-span-2 grid grid-cols-2">
-                <div className="rounded-2xl w-full max-md:pb-10 h-auto rotate-[-5deg] p-20 col-span-1">
+              <div className="w-full h-full mt-20 col-span-2 grid grid-cols-2 max-md:grid-cols-1 max-md:col-span-1">
+                <div className="rounded-2xl w-full max-md:pb-10 h-auto rotate-[-5deg] max-md:p-2 p-20 col-span-1">
                   <Image
                     src={anan1}
                     alt={"pekoraImg"}
