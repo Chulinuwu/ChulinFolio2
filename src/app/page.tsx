@@ -55,42 +55,40 @@ export default function Home() {
     });
   };
 
-  const scrollToAbout= () => {
-    const about = document.getElementById('about');
+  const scrollToAbout = () => {
+    const about = document.getElementById("about");
     if (about) {
-      about.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      about.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
-  
   const [isScrolled, setIsScrolled] = useState(false);
-  const [navbarHeight, setNavbarHeight] = useState('h-20');
-  const [textSize, setTextSize] = useState('text-2xl');
-  const [navbarColor, setNavbarColor] = useState('bg-opacity-0');
-  const [textColor, setTextColor] = useState('text-white');
-
+  const [navbarHeight, setNavbarHeight] = useState("h-20");
+  const [textSize, setTextSize] = useState("text-2xl");
+  const [navbarColor, setNavbarColor] = useState("bg-opacity-0");
+  const [textColor, setTextColor] = useState("text-white");
 
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 0;
       if (show) {
         setIsScrolled(true);
-        setNavbarHeight('h-16');
-        setTextSize('text-xl');
-        setTextColor('text-rednew');
-        setNavbarColor('bg-opacity-100');
+        setNavbarHeight("h-16");
+        setTextSize("text-xl");
+        setTextColor("text-rednew");
+        setNavbarColor("bg-opacity-100");
       } else {
         setIsScrolled(false);
-        setNavbarHeight('h-20');
-        setTextSize('text-2xl');
-        setTextColor('text-white');
-        setNavbarColor('bg-opacity-0');
+        setNavbarHeight("h-20");
+        setTextSize("text-2xl");
+        setTextColor("text-white");
+        setNavbarColor("bg-opacity-0");
       }
     };
 
-    document.addEventListener('scroll', handleScroll);
+    document.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -98,73 +96,76 @@ export default function Home() {
     <main className="w-full flex flex-col">
       {isClient && (
         <div className="w-full  h-full">
-       <nav
-      className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
-    >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-[100%]">
-        <a
-          href="#"
-          className="flex items-center space-x-3 rtl:space-x-reverse "
-        >
-          {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" /> */}
-          <span
-            className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
+          <nav
+            className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
           >
-            Chulinxz
-          </span>
-        </a>
-        {/* <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-[100%]">
+              <a
+                href="#"
+                className="flex items-center space-x-3 rtl:space-x-reverse "
+              >
+                {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" /> */}
+                <span
+                  className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
+                >
+                  Chulinxz
+                </span>
+              </a>
+              {/* <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
         <span className="sr-only font-semibold">Open main menu</span>
         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
     </button> */}
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-            <li>
               <div
-                onClick={scrollToTop}
-                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold aria-current="page`}
+                className="hidden w-full md:block md:w-auto"
+                id="navbar-default"
               >
-                Home
+                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
+                  <li>
+                    <div
+                      onClick={scrollToTop}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold aria-current="page`}
+                    >
+                      Home
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      onClick={scrollToAbout}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+                    >
+                      About
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+                    >
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
               </div>
-            </li>
-            <li>
-              <div
-                onClick={scrollToAbout}
-                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
-              >
-                About
-              </div>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            </div>
+          </nav>
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
             <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
               {typeof window !== "undefined" &&
@@ -181,29 +182,29 @@ export default function Home() {
                   </div>
                 )}
               <div className="w-full h-full flex flex-col max-lg:mb-20 max-md:mb-0 ">
-              <div className="text-white text-5xl  font-bold mt-[30%] max-lg:mt-10 max-md:mt-10 mb-10 max-lg:text-4xl max-md:text-xl max-lg:text-center">
-                <TypeAnimation
-                  sequence={[
-                    // Same substring at the start will only be typed once, initially
-                    "Hi there, I'm An-An",
-                    1000,
-                    "Student in Computer Engineering",
-                    1000,
-                    "Chulalongkorn University",
-                    1000,
-                    "Welcome to My Website!",
-                    1000,
-                  ]}
-                  speed={50}
-                  repeat={Infinity}
-                />
-              </div>
-              <div className="text-white animate__bounceInRight animated text-3xl font-bold max-lg:text-lg max-lg:text-center ">
-                Made this website to introduce myself to you {"<3"}
-              </div>
-              <div className="text-white text-2xl font-bold animate__bounceInRight animated max-lg:text-base max-lg:text-center   mt-3">
-                Developer / Digital Artist / UXUI Designer
-              </div>
+                <div className="text-white text-5xl  font-bold mt-[30%] max-lg:mt-10 max-md:mt-10 mb-10 max-lg:text-4xl max-md:text-xl max-lg:text-center">
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed once, initially
+                      "Hi there, I'm An-An",
+                      1000,
+                      "Student in Computer Engineering",
+                      1000,
+                      "Chulalongkorn University",
+                      1000,
+                      "Welcome to My Website!",
+                      1000,
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                  />
+                </div>
+                <div className="text-white animate__bounceInRight animated text-3xl font-bold max-lg:text-lg max-lg:text-center ">
+                  Made this website to introduce myself to you {"<3"}
+                </div>
+                <div className="text-white text-2xl font-bold animate__bounceInRight animated max-lg:text-base max-lg:text-center   mt-3">
+                  Developer / Digital Artist / UXUI Designer
+                </div>
               </div>
 
               {/* <div className="w-full h-full flex flex-row max-md:flex-col my-5 max-md:mt-12 justify-start max-md:justify-center max-md:w-full">
@@ -250,18 +251,18 @@ export default function Home() {
               </div>
             </div> */}
             </div>
-<div className="w-full h-full max-lg:w-0 mt- flex justify-end bottom-0">
-            <Image
-              src={pekoraImg}
-              alt={"pekoraImg"}
-              height={0}
-              width={0}
-              className="w-auto h-auto mt-[80px]   max-lg:w-0 "
-            />
+            <div className="w-full h-full max-lg:w-0 mt- flex justify-end bottom-0">
+              <Image
+                src={pekoraImg}
+                alt={"pekoraImg"}
+                height={0}
+                width={0}
+                className="w-auto h-auto mt-[80px]   max-lg:w-0 "
+              />
             </div>
           </div>
           {typeof window !== "undefined" && windowSize.width > 1024 && (
-            <div className="px-20 pt-20 w-full flex justify-between h-full">
+            <div className="px-20 pt-20 w-full flex justify-center h-full">
               <button
                 onClick={() =>
                   window.open("https://www.instagram.com/vyovyo___", "_blank")
@@ -325,7 +326,7 @@ export default function Home() {
                 </svg>
                 Gmail
               </button>
-              <button className="w-1/3 group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-700 to-gray-700 hover:after:animate-pulse">
+              <button className="w-[300px] group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-[#DAA35E] px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden bg-gradient-to-r from-blue-700 to-gray-700 hover:after:animate-pulse">
                 <svg
                   className="h-7 w-7"
                   fill="currentColor"
@@ -427,7 +428,10 @@ export default function Home() {
             </div>
           )}
 
-          <div className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 " id="about">
+          <div
+            className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 "
+            id="about"
+          >
             <div className="w-full col-span-1 flex justify-center items-center p-20">
               <Image
                 src={pic1}
@@ -457,7 +461,7 @@ export default function Home() {
               <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 justify-center">
                 <div className="w-5 h-1 bg-pinknew mr-5"></div>About Me 2
               </div>
-              <div className="w-full h-full mt-20 col-span-2 grid grid-cols-2 max-md:grid-cols-1 max-md:col-span-1">
+              <div className="w-full h-full pt-10 col-span-2 grid grid-cols-2 max-md:grid-cols-1 max-md:col-span-1">
                 <div className="rounded-2xl w-full max-md:pb-10 h-auto rotate-[-5deg] max-md:p-2 p-20 col-span-1">
                   <Image
                     src={anan1}
@@ -468,7 +472,7 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="text-xl w-full pl-20 h-full max-lg:w-full max-lg:pl-0 flex max-lg:text-lg max-md:text-base justify-center items-center">
+                <div className="text-xl w-full pl-20 pt-10 h-full max-lg:w-full max-lg:pl-0 flex max-lg:text-lg max-md:text-base justify-center items-center">
                   <p>
                     From a young age, I demonstrated a natural aptitude for
                     technology and innovation. I would spend hours dismantling
@@ -496,6 +500,15 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <div className="w-full h-auto grid grid-flow-row pt-10">
+          <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 justify-center">
+                <div className="w-5 h-1 bg-pinknew mr-5"></div>Experience
+              </div>
+
+              <div className="bg-rednew"></div>
+          </div>
+
         </div>
       )}
 
