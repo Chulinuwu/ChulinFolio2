@@ -3,16 +3,16 @@ import { SocialIcon } from "react-social-icons/component";
 
 export default function footer() {
   return (
-    <div className="flex flex-col  bg-rednew w-full px-24 pt-24 pb-12 justify-center item-center text-center z-40">
-      <p className="flex font-poppins font-bold text-white text-2xl justify-center">
+    <div className="flex flex-col  bg-rednew w-full px-24 pt-24 pb-12 max-md:px-10 justify-center item-center text-center z-40">
+      <p className="flex font-poppins font-bold text-white text-2xl max-md:text-lg justify-center">
         This Website is made by Chulinxz, feel free to contact me
         anytime :D
       </p>
-      <div className="pt-5 font-bold font-poppins text-xl items-center justify-center flex px-2 text-white">If you interseting in Digital Arts or wanna support my works you can contact me by Discord's ID or click the "Twitter" button below to direct message to me!! Another Questions are allowed to ask too</div>
+      <div className="pt-5 font-bold font-poppins text-xl items-center justify-center max-md:text-sm flex px-2 text-white">If you interseting in Digital Arts or wanna support my works you can contact me by Discord's ID or click the "Twitter" button below to direct message to me!! Another Questions are allowed to ask too</div>
       <div className="mt-10"></div>
       <hr></hr>
       <div className="mt-10"></div>
-      <div className="text-white">© Chulinx Folio, All Right Reserved | Implemented by Nextjs</div>
+      <div className="text-white max-md:text-xs">© Chulinx Folio, All Right Reserved | Implemented by Nextjs</div>
       {/* <div className="flex pt-10 justify-center">
         <div className="flex flex-row"> */}
         {/* ig icon */}

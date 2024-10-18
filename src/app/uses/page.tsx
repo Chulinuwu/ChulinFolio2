@@ -2,14 +2,14 @@
 import Image from "next/image";
 import "animate.css";
 import Footer from "@/components/footer";
-import peko from "../../public/img/pekora.png";
-import pic1 from "../../public/img/pic1.png";
-import pekomobile from "../../public/img/pekoramobile.png";
-import uxui from "../../public/uxui.svg";
-import web from "../../public/website.svg";
-import mobile from "../../public/mobile.svg";
-import Drawing from "../../public/Drawing.svg";
-import data from "../../public/data.svg";
+import peko from "../../../public/img/pekora.png";
+import pic1 from "../../../public/img/pic1.png";
+import pekomobile from "../../../public/img/pekoramobile.png";
+import uxui from "../../../public/uxui.svg";
+import web from "../../../public/website.svg";
+import mobile from "../../../public/mobile.svg";
+import Drawing from "../../../public/Drawing.svg";
+import data from "../../../public/data.svg";
 import { useState, useEffect } from "react";
 import "animate.css";
 import { useRouter } from "next/navigation";
@@ -135,7 +135,7 @@ export default function Home() {
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
                   <li>
                     <a
-                      onClick={scrollToTop}
+                      href="/"
                       className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
                       Home
@@ -439,6 +439,8 @@ export default function Home() {
             </div>
           )}
 
+          <div className="my-10"></div>
+          {/* 
           <div
             className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 "
             id="about"
@@ -465,80 +467,358 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="w-full h-auto grid grid-flow-row py-10 ">
             <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
-              <div className="w-5 h-1 bg-pinknew mr-5"></div>What I'm Doing
+              <div className="w-5 h-1 bg-pinknew mr-5"></div>Tools
             </div>
-            <div className="flex flex-wrap gap-6 p-4 justify-center">
+            <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
               <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">
-                  Web Design (UX/UI)
-                </div>
+                <div className="text-xl font-semibold mb-4">Figma</div>
                 <p className="text-gray-600 text-sm">
-                  UX/UI designer for various projects using{" "}
-                  <span className="text-rednew">Figma</span>
+                A web-based design tool for UI/UX design and collaboration.
                 </p>
               </div>
 
               <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={web} alt="web" width={50} height={50} />
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">
-                  Web Development
-                </div>
+                <div className="text-xl font-semibold mb-4">Motiff</div>
                 <p className="text-gray-600 text-sm">
-                  <span className="text-rednew">Full-Stack Developer </span>for
-                  some spanrojects. But mostly is{" "}
-                  <span className="text-rednew">Front-end Developer </span>{" "}
-                  include UX/UI designer. proficient in Typescript
+                Placeholder; possibly a design or productivity tool.
                 </p>
               </div>
 
               <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={mobile} alt="mobile" width={50} height={50} />
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">Mobile Apps</div>
+                <div className="text-xl font-semibold mb-4">Vs Code</div>
                 <p className="text-gray-600 text-sm">
-                  Used to do some apps with{" "}
-                  <span className="text-rednew">React-Native + expo</span>, also
-                  some <span className="text-rednew">Flutter</span> apps
+                A popular source code editor by Microsoft.
                 </p>
               </div>
 
               <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={Drawing} alt="uxui" width={50} height={50} />
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">Drawing</div>
-                <p className="text-gray-600">
-                  Drawing is my hobby, also recieve commission. you can check my
-                  art in other section in{" "}
-                  <span className="text-rednew">Navigation bar</span>
+                <div className="text-xl font-semibold mb-4">Android Studio</div>
+                <p className="text-gray-600 text-sm">
+                The official IDE for Android app development.
                 </p>
               </div>
 
               <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
-                  <Image src={data} alt="uxui" width={50} height={50} />
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">Data Analyst</div>
-                <p className="text-gray-600">
-                  Just <span className="text-rednew">Beginner</span> with ML and
-                  AI, know some basic , techniques for data analysis.
+                <div className="text-xl font-semibold mb-4">IntelliJ</div>
+                <p className="text-gray-600 text-sm">
+                An integrated development environment (IDE) for Java and other languages.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Notion</div>
+                <p className="text-gray-600 text-sm">
+                A productivity tool for note-taking and project management.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Linear</div>
+                <p className="text-gray-600 text-sm">
+                A tool for tracking issues and project management for software teams.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Azure DevOps</div>
+                <p className="text-gray-600 text-sm">
+                A set of tools for software development and version control.
+                </p>
+              </div>
+
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Gamma</div>
+                <p className="text-gray-600 text-sm">
+                Placeholder; may refer to a presentation or workflow tool.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Procreate</div>
+                <p className="text-gray-600 text-sm">
+                A powerful digital painting app for iPad.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Clip Studio Paint</div>
+                <p className="text-gray-600 text-sm">
+                A drawing and painting software for illustrators and manga artists.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div className="w-full h-auto grid grid-flow-row py-10 ">
+            <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
+              <div className="w-5 h-1 bg-pinknew mr-5"></div>Framework
+            </div>
+            <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">React</div>
+                <p className="text-gray-600 text-sm">
+                  JavaScript library for building user interfaces, particularly
+                  for single-page applications. It's known for its
+                  component-based architecture, which allows for reusable code.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Nextjs</div>
+                <p className="text-gray-600 text-sm">
+                  React framework that enables server-side rendering and static
+                  site generation. It offers many built-in features for building
+                  modern web applications, such as routing, API handling, and
+                  improved SEO.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">React-Native</div>
+                <p className="text-gray-600 text-sm">
+                  used for building apps for iOS and Android platforms, using
+                  the same codebase, which improves development efficiency.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Svelte</div>
+                <p className="text-gray-600 text-sm">
+                  front-end framework that differs from React and others by
+                  compiling your code into efficient vanilla JavaScript at build
+                  time, instead of running in the browser. It results in faster
+                  performance and smaller bundles.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Flutter</div>
+                <p className="text-gray-600 text-sm">
+                  toolkit from Google for building natively compiled
+                  applications for mobile, web, and desktop from a single
+                  codebase. It uses Dart as its programming language and allows
+                  for high-performance apps.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Quarkus</div>
+                <p className="text-gray-600 text-sm">
+                  Kubernetes-native Java framework optimized for GraalVM and
+                  OpenJDK HotSpot. It's designed to provide fast boot time and
+                  low memory usage, making it ideal for cloud-native and
+                  microservice architectures.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Express</div>
+                <p className="text-gray-600 text-sm">
+                  web framework for Node.js, commonly used to build web
+                  applications and RESTful APIs. It is flexible and integrates
+                  easily with various databases and middleware, making it a
+                  popular choice for back-end development.
                 </p>
               </div>
             </div>
-
-            <div className="bg-rednew"></div>
           </div>
 
+          <div className="w-full h-auto grid grid-flow-row py-10 ">
+            <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
+              <div className="w-5 h-1 bg-pinknew mr-5"></div>Programming
+              Language
+            </div>
+            <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">C</div>
+                <p className="text-gray-600 text-sm">
+                  powerful general-purpose programming language that has
+                  influenced many other languages, including C++, Java, and
+                  Python. It's widely used for system-level programming,
+                  embedded systems, and operating systems.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">C++</div>
+                <p className="text-gray-600 text-sm">
+                  extension of the C language with object-oriented programming
+                  features. It is used in various applications such as game
+                  development, system software, and performance-critical
+                  applications like real-time simulation systems.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Java</div>
+                <p className="text-gray-600 text-sm">
+                  high-level, class-based, object-oriented programming language
+                  designed to have as few implementation dependencies as
+                  possible. It's widely used for building enterprise-scale
+                  applications, Android apps, and large systems.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Dart</div>
+                <p className="text-gray-600 text-sm">
+                  open-source programming language developed by Google. It is
+                  mainly used for building mobile, desktop, server, and web
+                  applications. It powers Flutter, Google's UI toolkit for
+                  building cross-platform applications.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">JavaScript</div>
+                <p className="text-gray-600 text-sm">
+                  programming language of the web, used both on the front-end
+                  and back-end. It powers interactive web pages and is commonly
+                  used with libraries and frameworks like React, Angular, and
+                  Node.js.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Python</div>
+                <p className="text-gray-600 text-sm">
+                  versatile, high-level programming language known for its
+                  simplicity and readability. It is widely used in data
+                  analysis, machine learning, web development, automation, and
+                  more.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">TypeScript</div>
+                <p className="text-gray-600 text-sm">
+                  superset of JavaScript that adds static typing, allowing
+                  developers to catch errors earlier in the development process.
+                  It’s increasingly popular in large-scale applications and
+                  works seamlessly with JavaScript libraries.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">PHP</div>
+                <p className="text-gray-600 text-sm">
+                  server-side scripting language designed for web development
+                  but also used as a general-purpose programming language. It is
+                  often used in building dynamic websites and content management
+                  systems like WordPress.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">SQL</div>
+                <p className="text-gray-600 text-sm">
+                  standard language used to manage and manipulate databases. It
+                  is used to perform operations such as querying data, inserting
+                  records, and managing database structures.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={uxui} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Go</div>
+                <p className="text-gray-600 text-sm">
+                  open-source programming language designed for efficiency and
+                  scalability. Developed by Google, it is used for building
+                  fast, reliable, and large-scale software systems, particularly
+                  for cloud services.
+                </p>
+              </div>
+            </div>
+          </div>
           <Footer />
         </div>
       )}
