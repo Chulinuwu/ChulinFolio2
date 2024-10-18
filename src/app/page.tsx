@@ -502,13 +502,13 @@ export default function Home() {
           </div>
 
           <div className="w-full h-auto grid grid-flow-row pt-10">
-          <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 justify-center">
+          {/* <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 justify-center">
                 <div className="w-5 h-1 bg-pinknew mr-5"></div>Experience
               </div>
 
-              <div className="bg-rednew"></div>
+              <div className="bg-rednew"></div> */}
           </div>
-
+<Footer/>
         </div>
       )}
 

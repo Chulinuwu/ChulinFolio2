@@ -3,16 +3,20 @@ import { SocialIcon } from "react-social-icons/component";
 
 export default function footer() {
   return (
-    <div className="flex flex-col text-shadow-md bg-white w-full p-24 justify-center item-center text-center z-40">
-      <p className="flex font-poppins font-bold text-red-400 text-2xl justify-center">
-        This Website is made by Jirameth Wannasiwaporn, feel free to contact me
+    <div className="flex flex-col  bg-rednew w-full px-24 pt-24 pb-12 justify-center item-center text-center z-40">
+      <p className="flex font-poppins font-bold text-white text-2xl justify-center">
+        This Website is made by Chulinxz, feel free to contact me
         anytime :D
       </p>
-      <div className="pt-5 font-bold font-poppins text-xl items-center justify-center flex px-2 text-red-400">If you interseting in Digital Arts or wanna support my works you can contact me by Discord's ID or click the "Twitter" button below to direct message to me!! Another Questions are allowed to ask too</div>
-      <div className="flex pt-10 justify-center">
-        <div className="flex flex-row">
+      <div className="pt-5 font-bold font-poppins text-xl items-center justify-center flex px-2 text-white">If you interseting in Digital Arts or wanna support my works you can contact me by Discord's ID or click the "Twitter" button below to direct message to me!! Another Questions are allowed to ask too</div>
+      <div className="mt-10"></div>
+      <hr></hr>
+      <div className="mt-10"></div>
+      <div className="text-white">© Chulinx Folio, All Right Reserved | Implemented by Nextjs</div>
+      {/* <div className="flex pt-10 justify-center">
+        <div className="flex flex-row"> */}
         {/* ig icon */}
-        <a href="https://www.instagram.com/vyovyo___" target="_blank" className="px-2">
+        {/* <a href="https://www.instagram.com/vyovyo___" target="_blank" className="px-2">
           <svg
             width="50"
             height="50"
@@ -43,9 +47,9 @@ export default function footer() {
               </linearGradient>
             </defs>
           </svg>
-          </a>
+          </a> */}
           {/* githubIcon */}
-          <a href="https://github.com/Chulinuwu" target="_blank" className="px-2">
+          {/* <a href="https://github.com/Chulinuwu" target="_blank" className="px-2">
           <svg
             width="50"
             height="50"
@@ -58,12 +62,12 @@ export default function footer() {
               fill="black"
             />
           </svg>
-          </a>
+          </a> */}
 
          
-        </div>
+        {/* </div>
       
-      </div>
+      </div> */}
     </div>
   );
 }
