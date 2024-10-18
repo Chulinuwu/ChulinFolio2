@@ -22,6 +22,10 @@ body {
   background-attachment: fixed;
 }
 
+.carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for webkit */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

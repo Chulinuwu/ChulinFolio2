@@ -133,12 +133,12 @@ export default function Home() {
                 id="navbar-default"
               >
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-                  <li>
+                <li>
                     <a
                       href="/"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor}  hover:scale-105 transition-all bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
-                      Home
+                      HOME
                     </a>
                   </li>
                   {/* <li>
@@ -152,11 +152,19 @@ export default function Home() {
                   <li>
                     <a
                       href="/uses"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor}  hover:scale-105 transition-all bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
-                      Uses
+                      USES
                     </a>
                   </li>
+                  {/* <li>
+                    <a
+                      href="/journey"
+                      className={`text-xl block py-2 px-3 ${textColor} hover:scale-105 transition-all bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                    >
+                      JOURNEY
+                    </a>
+                  </li> */}
                   {/* <li>
                     <a
                       href="#"
@@ -474,7 +482,7 @@ export default function Home() {
               <div className="w-5 h-1 bg-pinknew mr-5"></div>Tools
             </div>
             <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -484,7 +492,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -494,7 +502,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -504,7 +512,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -514,7 +522,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -524,7 +532,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -534,7 +542,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -544,7 +552,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -555,7 +563,7 @@ export default function Home() {
               </div>
 
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -565,7 +573,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -575,7 +583,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -593,7 +601,7 @@ export default function Home() {
               <div className="w-5 h-1 bg-pinknew mr-5"></div>Framework
             </div>
             <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -605,7 +613,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -618,7 +626,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -629,7 +637,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -642,7 +650,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -655,7 +663,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -668,7 +676,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -689,7 +697,7 @@ export default function Home() {
               Language
             </div>
             <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -702,7 +710,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -715,7 +723,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -728,7 +736,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -741,7 +749,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -754,7 +762,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -767,7 +775,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -780,7 +788,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -793,7 +801,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -805,7 +813,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>

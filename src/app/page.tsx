@@ -15,6 +15,7 @@ import "animate.css";
 import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Carousel from "../components/corousel1";
 
 export default function Home() {
   const router = useRouter();
@@ -47,6 +48,44 @@ export default function Home() {
   }, []); // Empty dependency array means this effect runs once on mount
 
   const [isClient, setIsClient] = useState(false);
+
+  const experiences = [
+    {
+      year: "Apr 2021",
+      role: "POSN 1-2 Computer Student",
+      company: "Burapha University",
+      description:
+        "Begin to learn competitive programming , data structure and algorithm",
+    },
+    {
+      year: "Aug 2023 - now",
+      role: "CEDT Student",
+      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description:
+        "Begin academic life",
+    },
+    {
+      year: "May 2024 - July",
+      role: "BBL Intership as UX/UI Designer and Frontend Developer",
+      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description:
+        "sucu project",
+    },
+    {
+      year: "Sep 2024 - now",
+      role: "Information System Development (ISD) Frontend Developer",
+      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description:
+        "do what i have to do",
+    },
+    {
+      year: "Sep 2024 - now",
+      role: "Google Developer Student Clubs (GDSC) Core team (Graphic) ",
+      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description:
+        "just do what it need to do",
+    },
+  ];
 
   useEffect(() => {
     setIsClient(true);
@@ -136,9 +175,9 @@ export default function Home() {
                   <li>
                     <a
                       onClick={scrollToTop}
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
-                      Home
+                      HOME
                     </a>
                   </li>
                   {/* <li>
@@ -152,11 +191,19 @@ export default function Home() {
                   <li>
                     <a
                       href="/uses"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
-                      Uses
+                      USES
                     </a>
                   </li>
+                  {/* <li>
+                    <a
+                      href="/journey"
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                    >
+                      JOURNEY
+                    </a>
+                  </li> */}
                   {/* <li>
                     <a
                       href="#"
@@ -467,13 +514,34 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="py-10 bg-rednew text-gray-300 h-auto flex justify-center mb-10">
+            <div className="max-w-4xl m-10 flex flex-col  px-4 p-12">
+              <h2 className="text-3xl font-bold mb-8 text-white">Experience</h2>
+              <div className="relative border-l border-gray-700">
+                {experiences.map((experience, index) => (
+                  <div key={index} className="mb-10 ml-6">
+                    <span className="absolute w-6 h-6 bg-white rounded-full -left-3"></span>
+                    <p className="text-sm font-medium text-white">
+                      {experience.year}
+                    </p>
+                    <h3 className="text-xl font-semibold text-white">
+                      {experience.role}
+                    </h3>
+                    <p className="italic text-white">{experience.company}</p>
+                    <p className="mt-2 text-white">{experience.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="w-full h-auto grid grid-flow-row py-10 ">
             <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
               <div className="w-5 h-1 bg-pinknew mr-5"></div>What I'm Doing
             </div>
             <div className="flex flex-wrap gap-6 p-4 justify-center">
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
-                <div className="flex justify-center mb-4">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white hover:bg-slate-200 shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4 ">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
                 <div className="text-xl font-semibold mb-4">
@@ -485,7 +553,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg hover:bg-slate-200 rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={web} alt="web" width={50} height={50} />
                 </div>
@@ -500,7 +568,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 hover:bg-slate-200 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={mobile} alt="mobile" width={50} height={50} />
                 </div>
@@ -512,7 +580,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 hover:bg-slate-200 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={Drawing} alt="uxui" width={50} height={50} />
                 </div>
@@ -524,7 +592,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white shadow-lg rounded-lg p-6 hover:bg-slate-200 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={data} alt="uxui" width={50} height={50} />
                 </div>
@@ -538,6 +606,15 @@ export default function Home() {
 
             <div className="bg-rednew"></div>
           </div>
+
+          <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
+            <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
+          </div>
+          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 ">
+            <Carousel />
+          </div>
+
+          <div className="mt-12"></div>
 
           <Footer />
         </div>
