@@ -10,13 +10,14 @@ import web from "../../public/website.svg";
 import mobile from "../../public/mobile.svg";
 import Drawing from "../../public/Drawing.svg";
 import data from "../../public/data.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef } from "react";
 import "animate.css";
 import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Carousel from "../components/corousel1";
 import Link from "next/link";
+import useIntersectionObserver from "@/components/hooks/useIntersectionObserver";
 
 export default function Home() {
   const router = useRouter();
@@ -47,6 +48,10 @@ export default function Home() {
     // Remember to clean up the event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty dependency array means this effect runs once on mount
+
+
+  
+
 
   const [isClient, setIsClient] = useState(false);
 
@@ -95,7 +100,7 @@ export default function Home() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // if you want a smooth scrolling effect
+      behavior: "smooth", 
     });
   };
 
@@ -105,13 +110,6 @@ export default function Home() {
       about.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
-  // const scrollToUses = () => {
-  //   const Uses = document.getElementById("Uses");
-  //   if (Uses) {
-  //     Uses.scrollIntoView({ behavior: "smooth", block: "start" });
-  //   }
-  // };
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [navbarHeight, setNavbarHeight] = useState("h-20");
@@ -155,6 +153,9 @@ export default function Home() {
       setIsOpen(true);
     }
   };
+
+  
+
   return (
     <main className="w-full flex flex-col">
       {isClient && (
@@ -167,19 +168,13 @@ export default function Home() {
                 href="#"
                 className="flex items-center space-x-3 rtl:space-x-reverse "
               >
-                {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" /> */}
+               
                 <span
                   className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
                 >
                   Chulinxz
                 </span>
               </a>
-              {/* <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-        <span className="sr-only font-semibold">Open main menu</span>
-        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button> */}
               <div
                 className="hidden w-full md:block md:w-auto"
                 id="navbar-default"
@@ -193,14 +188,7 @@ export default function Home() {
                       HOME
                     </a>
                   </li>
-                  {/* <li>
-                    <a
-                      onClick={scrollToAbout}
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
-                    >
-                      About
-                    </a>
-                  </li> */}
+        
                   <li>
                     <a
                       href="/uses"
@@ -209,30 +197,14 @@ export default function Home() {
                       USES
                     </a>
                   </li>
-                  {/* <li>
-                    <a
-                      href="/journey"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
-                    >
-                      JOURNEY
-                    </a>
-                  </li> */}
-                  {/* <li>
+        
                     <a
                       href="#"
                       className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
                     >
                       Pricing
                     </a>
-                  </li> */}
-                  {/* <li>
-                    <a
-                      href="#"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent  md:p-0 font-semibold`}
-                    >
-                      Contact
-                    </a>
-                  </li> */}
+
                 </ul>
               </div>
               <div className="md:hidden">
@@ -292,7 +264,7 @@ export default function Home() {
                 <div className="text-white text-5xl  font-bold mt-[30%] max-lg:mt-10 max-md:mt-10 mb-10 max-lg:text-4xl max-md:text-xl max-lg:text-center">
                   <TypeAnimation
                     sequence={[
-                      // Same substring at the start will only be typed once, initially
+                  
                       "Hi there, I'm An-An",
                       1000,
                       "Computer Engineering Student",
@@ -314,49 +286,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* <div className="w-full h-full flex flex-row max-md:flex-col my-5 max-md:mt-12 justify-start max-md:justify-center max-md:w-full">
-              <div className="flex-row flex justify-center  ">
-                <div className="w-full h-full  flex justify-start max-md:justify-center    items-center">
-                  <Image
-                    src={ig}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto mr-10 max-lg:mr-5 max-sm:mr-2 max-lg:scale-[1.7] max-lg:hover:scale-[1.9]  max-lg:w-auto max-lg:h-auto  max-md:w-auto max-md:h -auto   hover:scale-[1.2] transition-all"
-                  />
-                </div>
-                <div className="w-full h-full  flex justify-start max-md:justify-center  items-center">
-                  <Image
-                    src={github}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto mr-10 max-sm:mr-2  max-lg:mr-5 max-lg:w-auto max-lg:h-auto max-lg:scale-[1.7]   max-lg:hover:scale-[1.9] max-md:w-auto max-md:h-auto    hover:scale-[1.2] transition-all "
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-row max-sm:pt-12 justify-center">
-                <div className="w-full h-full  flex justify-start max-md:justify-center  items-center">
-                  <Image
-                    src={gmail}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto mr-10  max-sm:mr-2  max-lg:mr-5  max-lg:w-auto max-lg:h-auto  max-lg:scale-[1.7]   max-lg:hover:scale-[1.9] max-md:w-auto max-md:h -auto  hover:scale-[1.2] transition-all"
-                  />
-                </div>
-                <div className="w-full h-full  flex justify-start max-md:justify-center     items-center">
-                  <Image
-                    src={discord}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto max-lg:w-auto max-lg:h-auto max-md:w-auto max-md:h -auto max-lg:scale-[1.7]  max-lg:hover:scale-[1.9]  hover:scale-[1.2] transition-all"
-                  />
-                </div>
-              </div>
-            </div> */}
+        
             </div>
             <div className="w-full h-full max-lg:w-0 mt- flex justify-end bottom-0">
               <Image
@@ -539,7 +469,7 @@ export default function Home() {
             className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 "
             id="about"
           >
-            <div className="w-full col-span-1 flex justify-center items-center p-20 max-lg:p-16 max-md:p-12 ">
+            <div id="itemleft" className="w-full  col-span-1 flex justify-center items-center p-20 max-lg:p-16 max-md:p-12 ">
               <Image
                 src={pic1}
                 alt={"pekoraImg"}
@@ -681,22 +611,3 @@ export default function Home() {
   );
 }
 
-{
-  /* <div className="w-[300px] h-[80px] flex-row flex justify-center items-center border-rednew border-2 rounded-lg  max-lg:w-[45%] mr-2 bg-white">
-                <div className="w-full h-full flex justify-center items-center">
-                  <div className="  flex items-center text-xl font-semibold text-rednew w-full justify-center space-x-5  text-left">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-7 w-7"
-                      fill="currentColor"
-                      style={{ color: "#FF3939" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-
-                    <div>GitHub</div>
-                  </div>
-                </div>
-              </div> */
-}
