@@ -269,49 +269,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* <div className="w-full h-full flex flex-row max-md:flex-col my-5 max-md:mt-12 justify-start max-md:justify-center max-md:w-full">
-              <div className="flex-row flex justify-center  ">
-                <div className="w-full h-full  flex justify-start max-md:justify-center    items-center">
-                  <Image
-                    src={ig}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto mr-10 max-lg:mr-5 max-sm:mr-2 max-lg:scale-[1.7] max-lg:hover:scale-[1.9]  max-lg:w-auto max-lg:h-auto  max-md:w-auto max-md:h -auto   hover:scale-[1.2] transition-all"
-                  />
-                </div>
-                <div className="w-full h-full  flex justify-start max-md:justify-center  items-center">
-                  <Image
-                    src={github}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto mr-10 max-sm:mr-2  max-lg:mr-5 max-lg:w-auto max-lg:h-auto max-lg:scale-[1.7]   max-lg:hover:scale-[1.9] max-md:w-auto max-md:h-auto    hover:scale-[1.2] transition-all "
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-row max-sm:pt-12 justify-center">
-                <div className="w-full h-full  flex justify-start max-md:justify-center  items-center">
-                  <Image
-                    src={gmail}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto mr-10  max-sm:mr-2  max-lg:mr-5  max-lg:w-auto max-lg:h-auto  max-lg:scale-[1.7]   max-lg:hover:scale-[1.9] max-md:w-auto max-md:h -auto  hover:scale-[1.2] transition-all"
-                  />
-                </div>
-                <div className="w-full h-full  flex justify-start max-md:justify-center     items-center">
-                  <Image
-                    src={discord}
-                    alt={"igImg"}
-                    height={0}
-                    width={0}
-                    className="w-1/2 h-auto max-lg:w-auto max-lg:h-auto max-md:w-auto max-md:h -auto max-lg:scale-[1.7]  max-lg:hover:scale-[1.9]  hover:scale-[1.2] transition-all"
-                  />
-                </div>
-              </div>
-            </div> */}
             </div>
             <div className="w-full h-full max-lg:w-0 mt- flex justify-end bottom-0">
               <Image
