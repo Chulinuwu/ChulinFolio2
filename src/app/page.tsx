@@ -242,11 +242,11 @@ export default function Home() {
           </nav>
 
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
-            <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
+            <div className="w-[60%]  h-full flex flex-col justify-center items-center max-md:justify-center max-lg:w-full max-lg:pl-0 max-lg:py-20 pt-[80px] pl-20 max-md:px-20 ">
               {typeof window !== "undefined" &&
                 windowSize.width < 1024 &&
                 isLoaded && (
-                  <div className="h-full flex justify-center max-lg:w-[100%] max-lg:h-[80%]">
+                  <div className="h-full flex justify-center max-lg:w-[50%] max-lg:h-auto">
                     <Image
                       src={pekomobile}
                       alt={"pekoraImg"}
