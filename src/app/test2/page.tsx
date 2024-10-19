@@ -2,21 +2,20 @@
 import Image from "next/image";
 import "animate.css";
 import Footer from "@/components/footer";
-import peko from "../../public/img/pekora.png";
-import pic1 from "../../public/img/pic1.png";
-import pekomobile from "../../public/img/pekoramobile.png";
-import banner from "../../public/img/banner.png";
-import uxui from "../../public/uxui.svg";
-import web from "../../public/website.svg";
-import mobile from "../../public/mobile.svg";
-import Drawing from "../../public/Drawing.svg";
-import data from "../../public/data.svg";
+import peko from "../../../public/img/pekora.png";
+import pic1 from "../../../public/img/pic1.png";
+import pekomobile from "../../../public/img/pekoramobile.png";
+import uxui from "../../../public/uxui.svg";
+import web from "../../../public/website.svg";
+import mobile from "../../../public/mobile.svg";
+import Drawing from "../../../public/Drawing.svg";
+import data from "../../../public/data.svg";
 import { useState, useEffect , useRef } from "react";
 import "animate.css";
 import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import Carousel from "../components/corousel1";
+import Carousel from "../../components/corousel1";
 import Link from "next/link";
 
 export default function Home() {
@@ -588,14 +587,10 @@ export default function Home() {
             <div className="bg-rednew"></div>
           </div>
 
-
-              <div className="w-full my-20 max-lg:my-16 max-md:my-12">
-                <Image src={banner} alt="banner" width={0} height={0} />
-              </div>
           <div className="text-4xl text-pinknew  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
             <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
           </div>
-          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 mt-5 ">
+          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 ">
             <Carousel />
           </div>
 
