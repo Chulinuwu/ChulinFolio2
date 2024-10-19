@@ -15,6 +15,7 @@ import "animate.css";
 import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -45,8 +46,15 @@ export default function Home() {
     // Remember to clean up the event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty dependency array means this effect runs once on mount
-
+  const [isOpen, setIsOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const handleOpen = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   useEffect(() => {
     setIsClient(true);
@@ -107,7 +115,7 @@ export default function Home() {
     <main className="w-full flex flex-col">
       {isClient && (
         <div className="w-full  h-full">
-          <nav
+            <nav
             className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
           >
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-[100%]">
@@ -133,10 +141,10 @@ export default function Home() {
                 id="navbar-default"
               >
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-                <li>
+                  <li>
                     <a
                       href="/"
-                      className={`text-xl block py-2 px-3 ${textColor}  hover:scale-105 transition-all bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
                       HOME
                     </a>
@@ -152,7 +160,7 @@ export default function Home() {
                   <li>
                     <a
                       href="/uses"
-                      className={`text-xl block py-2 px-3 ${textColor}  hover:scale-105 transition-all bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
                       USES
                     </a>
@@ -160,7 +168,7 @@ export default function Home() {
                   {/* <li>
                     <a
                       href="/journey"
-                      className={`text-xl block py-2 px-3 ${textColor} hover:scale-105 transition-all bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
                       JOURNEY
                     </a>
@@ -183,7 +191,42 @@ export default function Home() {
                   </li> */}
                 </ul>
               </div>
+              <div className="md:hidden">
+                <button
+                  onClick={handleOpen}
+                  className={`${textColor} focus:outline-none `}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d={
+                        isOpen
+                          ? "M6 18L18 6M6 6l12 12"
+                          : "M4 6h16M4 12h16M4 18h16"
+                      }
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
+            {isOpen && (
+              <div className="md:hidden m-7  ">
+                <Link href="/" className="flex justify-center items-center mb-3 bg-white text-rednew rounded-md shadow-lg  py-2 hover:scale-105 transition-all hover:bg-slate-200">
+                  Home
+                </Link>
+                <Link href="/uses" className="flex   rounded-md justify-center items-center shadow-lg bg-white text-rednew py-2 hover:scale-105 transition-all hover:bg-slate-200">
+                  Uses
+                </Link>
+              </div>
+            )}
           </nav>
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
             <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
@@ -477,12 +520,12 @@ export default function Home() {
             </div>
           </div> */}
 
-          <div className="w-full h-auto grid grid-flow-row py-10 ">
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
             <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
               <div className="w-5 h-1 bg-pinknew mr-5"></div>Tools
             </div>
             <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
-              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105  hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <Image src={uxui} alt="uxui" width={50} height={50} />
                 </div>
@@ -596,7 +639,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full h-auto grid grid-flow-row py-10 ">
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
             <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
               <div className="w-5 h-1 bg-pinknew mr-5"></div>Framework
             </div>
@@ -691,7 +734,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full h-auto grid grid-flow-row py-10 ">
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
             <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
               <div className="w-5 h-1 bg-pinknew mr-5"></div>Programming
               Language

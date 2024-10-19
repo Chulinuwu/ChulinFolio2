@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Carousel from "../components/corousel1";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -60,30 +61,30 @@ export default function Home() {
     {
       year: "Aug 2023 - now",
       role: "CEDT Student",
-      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description:
-        "Begin academic life",
+      company:
+        "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description: "Begin academic life",
     },
     {
       year: "May 2024 - July",
       role: "BBL Intership as UX/UI Designer and Frontend Developer",
-      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description:
-        "sucu project",
+      company:
+        "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description: "sucu project",
     },
     {
       year: "Sep 2024 - now",
       role: "Information System Development (ISD) Frontend Developer",
-      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description:
-        "do what i have to do",
+      company:
+        "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description: "do what i have to do",
     },
     {
       year: "Sep 2024 - now",
       role: "Google Developer Student Clubs (GDSC) Core team (Graphic) ",
-      company: "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description:
-        "just do what it need to do",
+      company:
+        "Computer Engineering and Digital Technology , Chulalongkorn University",
+      description: "just do what it need to do",
     },
   ];
 
@@ -117,22 +118,27 @@ export default function Home() {
   const [textSize, setTextSize] = useState("text-2xl");
   const [navbarColor, setNavbarColor] = useState("bg-opacity-0");
   const [textColor, setTextColor] = useState("text-white");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 0;
       if (show) {
-        setIsScrolled(true);
-        setNavbarHeight("h-16");
-        setTextSize("text-xl");
-        setTextColor("text-rednew");
-        setNavbarColor("bg-opacity-100");
+
+          setIsScrolled(true);
+          setNavbarHeight("h-16");
+          setTextSize("text-xl");
+          setTextColor("text-rednew");
+          setNavbarColor("bg-opacity-100");
+   
       } else {
-        setIsScrolled(false);
-        setNavbarHeight("h-20");
-        setTextSize("text-2xl");
-        setTextColor("text-white");
-        setNavbarColor("bg-opacity-0");
+  
+          setIsScrolled(false);
+          setNavbarHeight("h-20");
+          setTextSize("text-2xl");
+          setTextColor("text-white");
+          setNavbarColor("bg-opacity-0");
+
       }
     };
 
@@ -142,6 +148,13 @@ export default function Home() {
     };
   }, []);
 
+  const handleOpen = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
   return (
     <main className="w-full flex flex-col">
       {isClient && (
@@ -222,8 +235,44 @@ export default function Home() {
                   </li> */}
                 </ul>
               </div>
+              <div className="md:hidden">
+                <button
+                  onClick={handleOpen}
+                  className={`${textColor} focus:outline-none `}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d={
+                        isOpen
+                          ? "M6 18L18 6M6 6l12 12"
+                          : "M4 6h16M4 12h16M4 18h16"
+                      }
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
+            {isOpen && (
+              <div className="md:hidden m-7  ">
+                <Link href="/" className="flex justify-center items-center mb-3 bg-white rounded-md shadow-lg text-rednew py-2 hover:scale-105 transition-all hover:bg-slate-200">
+                  Home
+                </Link>
+                <Link href="/uses" className="flex   rounded-md justify-center items-center shadow-lg text-rednew bg-white py-2 hover:scale-105 transition-all hover:bg-slate-200">
+                  Uses
+                </Link>
+              </div>
+            )}
           </nav>
+
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
             <div className="w-[60%] h-full flex flex-col justify-center max-md:justify-center max-md:w-full pt-[80px] pl-20 max-md:px-20 ">
               {typeof window !== "undefined" &&
@@ -490,7 +539,7 @@ export default function Home() {
             className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 "
             id="about"
           >
-            <div className="w-full col-span-1 flex justify-center items-center p-20 ">
+            <div className="w-full col-span-1 flex justify-center items-center p-20 max-lg:p-16 max-md:p-12 ">
               <Image
                 src={pic1}
                 alt={"pekoraImg"}
@@ -500,7 +549,7 @@ export default function Home() {
               />
             </div>
             <div className=" w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1 col-span-1">
-              <div className="flex justify-center items-center w-full h-full flex-col p-20">
+              <div className="flex justify-center items-center w-full h-full flex-col p-20 max-lg:px-16 max-md:px-12 max-lg:pt-0">
                 <div className="text-4xl text-pinknew flex flex-row items-center">
                   <div className="w-5 h-1 bg-pinknew mr-5"></div>About Me
                 </div>
@@ -535,7 +584,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full h-auto grid grid-flow-row py-10 ">
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12 ">
             <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
               <div className="w-5 h-1 bg-pinknew mr-5"></div>What I'm Doing
             </div>
@@ -607,7 +656,7 @@ export default function Home() {
             <div className="bg-rednew"></div>
           </div>
 
-          <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
+          <div className="text-4xl text-pinknew  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
             <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
           </div>
           <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 ">
