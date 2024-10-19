@@ -67,24 +67,24 @@ export default function Home() {
     },
     {
       year: "May 2024 - July",
-      role: "BBL Intership as UX/UI Designer and Frontend Developer",
+      role: "BBL Internship as UX/UI Designer and Frontend Developer",
       company:
-        "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description: "sucu project",
+        "Bangkok Bank Public Company Limited (BBL)",
+      description: "iFunds project developed by Nextjs + Java Quarkus + PostgreSQL",
     },
     {
       year: "Sep 2024 - now",
       role: "Information System Development (ISD) Frontend Developer",
       company:
         "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description: "do what i have to do",
+      description: "SUCU Project",
     },
     {
       year: "Sep 2024 - now",
       role: "Google Developer Student Clubs (GDSC) Core team (Graphic) ",
       company:
         "Computer Engineering and Digital Technology , Chulalongkorn University",
-      description: "just do what it need to do",
+      description: "Designing and creating graphic for GDSC",
     },
   ];
 
@@ -295,7 +295,7 @@ export default function Home() {
                       // Same substring at the start will only be typed once, initially
                       "Hi there, I'm An-An",
                       1000,
-                      "Student in Computer Engineering",
+                      "Computer Engineering Student",
                       1000,
                       "Chulalongkorn University",
                       1000,
