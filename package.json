@@ -16,6 +16,8 @@
     "@react-spring/web": "^9.7.3",
     "animate.css": "^4.1.1",
     "flowbite": "^2.3.0",
+    "framer-motion": "^11.11.9",
+    "intersection-observer": "^0.12.2",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",

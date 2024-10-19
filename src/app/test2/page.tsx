@@ -2,20 +2,20 @@
 import Image from "next/image";
 import "animate.css";
 import Footer from "@/components/footer";
-import peko from "../../public/img/pekora.png";
-import pic1 from "../../public/img/pic1.png";
-import pekomobile from "../../public/img/pekoramobile.png";
-import uxui from "../../public/uxui.svg";
-import web from "../../public/website.svg";
-import mobile from "../../public/mobile.svg";
-import Drawing from "../../public/Drawing.svg";
-import data from "../../public/data.svg";
+import peko from "../../../public/img/pekora.png";
+import pic1 from "../../../public/img/pic1.png";
+import pekomobile from "../../../public/img/pekoramobile.png";
+import uxui from "../../../public/uxui.svg";
+import web from "../../../public/website.svg";
+import mobile from "../../../public/mobile.svg";
+import Drawing from "../../../public/Drawing.svg";
+import data from "../../../public/data.svg";
 import { useState, useEffect , useRef } from "react";
 import "animate.css";
 import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import Carousel from "../components/corousel1";
+import Carousel from "../../components/corousel1";
 import Link from "next/link";
 
 export default function Home() {

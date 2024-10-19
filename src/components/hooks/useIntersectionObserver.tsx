@@ -1,34 +1,36 @@
 import { useEffect, useRef } from 'react';
 
-function useIntersectionObserver<T extends HTMLElement>(
-  callback: IntersectionObserverCallback,
-  options?: IntersectionObserverInit
-) {
-  const observer = useRef<IntersectionObserver | null>(null);
-  const elementRef = useRef<T | null>(null);
+const useIntersectionObserver = (classNames: string) => {
+  const elementsRef = useRef<(HTMLDivElement | null)[]>([]); // Correctly type the ref
 
   useEffect(() => {
-    if (observer.current) {
-      observer.current.disconnect();
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const classList = classNames.split(' '); // Split the string into individual class names
+            classList.forEach((className) => {
+              entry.target.classList.add(className); // Add each class name individually
+            });
+            observer.unobserve(entry.target); // Stop observing the element once it is visible
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    observer.current = new IntersectionObserver(callback, options);
-
-    const { current: currentObserver } = observer;
-    const { current: currentElement } = elementRef;
-
-    if (currentElement) {
-      currentObserver.observe(currentElement);
-    }
+    elementsRef.current.forEach((element) => {
+      if (element) observer.observe(element);
+    });
 
     return () => {
-      if (currentObserver && currentElement) {
-        currentObserver.unobserve(currentElement);
-      }
+      elementsRef.current.forEach((element) => {
+        if (element) observer.unobserve(element);
+      });
     };
-  }, [callback, options]);
+  }, [classNames]);
 
-  return elementRef;
-}
+  return elementsRef;
+};
 
 export default useIntersectionObserver;
