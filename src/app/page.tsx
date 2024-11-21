@@ -11,13 +11,44 @@ import web from "../../public/website.svg";
 import mobile from "../../public/mobile.svg";
 import Drawing from "../../public/Drawing.svg";
 import data from "../../public/data.svg";
-import { useState, useEffect , useRef } from "react";
+import cplus from "../../public/img/cplus.png";
+import c from "../../public/img/c.png";
+import go from "../../public/img/go.png";
+import python from "../../public/img/python.png";
+import typescript from "../../public/img/typescript.png";
+import java from "../../public/img/java.png";
+import javascript from "../../public/img/javascript.png";
+import php from "../../public/img/php.png";
+import dart from "../../public/img/dart.png";
+import cloud from "../../public/img/cloud.png";
+import figma from "../../public/img/figma.png";
+import azure from "../../public/img/azure.png";
+import android from "../../public/img/android.png";
+import procreate from "../../public/img/procreate.png";
+import clipstudio from "../../public/img/clipstudio.png";
+import linear from "../../public/img/linear.png";
+import gamma from "../../public/img/gamma.png";
+import motiff from "../../public/img/motiff.png";
+import notion from "../../public/img/notion.png";
+import platformio from "../../public/img/platformio.png";
+import vscode from "../../public/img/vscode.png";
+import intellij from "../../public/img/intellij.png";
+import { useState, useEffect, useRef } from "react";
 import "animate.css";
 import { useRouter } from "next/navigation";
 import { TypeAnimation } from "react-type-animation";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Carousel from "../components/corousel1";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCuttlefish,
+  faJava,
+  faJs,
+  faPython,
+  faPhp,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   const router = useRouter();
@@ -49,12 +80,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty dependency array means this effect runs once on mount
 
-
-
-
   const [isClient, setIsClient] = useState(false);
-
- 
 
   const experiences = [
     {
@@ -74,9 +100,9 @@ export default function Home() {
     {
       year: "May 2024 - July",
       role: "BBL Internship as UX/UI Designer and Frontend Developer",
-      company:
-        "Bangkok Bank Public Company Limited (BBL)",
-      description: "iFunds project developed by Nextjs + Java Quarkus + PostgreSQL",
+      company: "Bangkok Bank Public Company Limited (BBL)",
+      description:
+        "iFunds project developed by Nextjs + Java Quarkus + PostgreSQL",
     },
     {
       year: "Sep 2024 - now",
@@ -101,7 +127,7 @@ export default function Home() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
 
@@ -123,21 +149,17 @@ export default function Home() {
     const handleScroll = () => {
       const show = window.scrollY > 0;
       if (show) {
-
-          setIsScrolled(true);
-          setNavbarHeight("h-16");
-          setTextSize("text-xl");
-          setTextColor("text-rednew");
-          setNavbarColor("bg-opacity-100");
-   
+        setIsScrolled(true);
+        setNavbarHeight("h-16");
+        setTextSize("text-xl");
+        setTextColor("text-rednew");
+        setNavbarColor("bg-opacity-100");
       } else {
-  
-          setIsScrolled(false);
-          setNavbarHeight("h-20");
-          setTextSize("text-2xl");
-          setTextColor("text-white");
-          setNavbarColor("bg-opacity-0");
-
+        setIsScrolled(false);
+        setNavbarHeight("h-20");
+        setTextSize("text-2xl");
+        setTextColor("text-white");
+        setNavbarColor("bg-opacity-0");
       }
     };
 
@@ -155,8 +177,6 @@ export default function Home() {
     }
   };
 
-  
-
   return (
     <main className="w-full flex flex-col">
       {isClient && (
@@ -169,7 +189,6 @@ export default function Home() {
                 href="#"
                 className="flex items-center space-x-3 rtl:space-x-reverse "
               >
-               
                 <span
                   className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
                 >
@@ -181,29 +200,26 @@ export default function Home() {
                 id="navbar-default"
               >
                 <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-                  <li>
+                  {/* <li>
                     <a
                       onClick={scrollToTop}
                       className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
                       HOME
                     </a>
-                  </li>
-        
-                  <li>
+                  </li> */}
+
+                  {/* <li>
                     <a
                       href="/uses"
                       className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
                     >
                       USES
                     </a>
-                  </li>
-        
-
-   
+                  </li> */}
                 </ul>
               </div>
-              <div className="md:hidden">
+              {/* <div className="md:hidden">
                 <button
                   onClick={handleOpen}
                   className={`${textColor} focus:outline-none `}
@@ -227,18 +243,24 @@ export default function Home() {
                     />
                   </svg>
                 </button>
-              </div>
+              </div> */}
             </div>
-            {isOpen && (
+            {/* {isOpen && (
               <div className="md:hidden m-7  ">
-                <Link href="/" className="flex justify-center items-center mb-3 bg-white rounded-md shadow-lg text-rednew py-2 hover:scale-105 transition-all hover:bg-slate-200">
+                <Link
+                  href="/"
+                  className="flex justify-center items-center mb-3 bg-white rounded-md shadow-lg text-rednew py-2 hover:scale-105 transition-all hover:bg-slate-200"
+                >
                   Home
                 </Link>
-                <Link href="/uses" className="flex   rounded-md justify-center items-center shadow-lg text-rednew bg-white py-2 hover:scale-105 transition-all hover:bg-slate-200">
+                <Link
+                  href="/uses"
+                  className="flex   rounded-md justify-center items-center shadow-lg text-rednew bg-white py-2 hover:scale-105 transition-all hover:bg-slate-200"
+                >
                   Uses
                 </Link>
               </div>
-            )}
+            )} */}
           </nav>
 
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
@@ -260,7 +282,6 @@ export default function Home() {
                 <div className="text-white text-5xl  font-bold mt-[30%] max-lg:mt-10 max-md:mt-10 mb-10 max-lg:text-4xl max-md:text-xl max-lg:text-center">
                   <TypeAnimation
                     sequence={[
-                  
                       "Hi there, I'm An-An",
                       1000,
                       "Computer Engineering Student",
@@ -281,8 +302,6 @@ export default function Home() {
                   Developer / Digital Artist / UXUI Designer
                 </div>
               </div>
-
-        
             </div>
             <div className="w-full h-full max-lg:w-0 mt- flex justify-end bottom-0">
               <Image
@@ -465,34 +484,31 @@ export default function Home() {
             className="  w-full grid lg:grid-cols-2 max-lg:grid-row-2 "
             id="about"
           >
-            <div
+            <div className="w-full col-span-1 flex justify-center items-center p-20 max-lg:p-16 max-md:p-12 animate__animated">
+              <Image
+                src={pic1}
+                alt={"pekoraImg"}
+                height={0}
+                width={0}
+                className="w-[100%] max-lg:w-full h-auto flex justify-center items-center hover:rotate-1 transition-all rotate-3 rounded-2xl shadow-xl m-2"
+              />
+            </div>
 
-        className="w-full col-span-1 flex justify-center items-center p-20 max-lg:p-16 max-md:p-12 animate__animated"
-      >
-        <Image
-          src={pic1}
-          alt={"pekoraImg"}
-          height={0}
-          width={0}
-          className="w-[100%] max-lg:w-full h-auto flex justify-center items-center hover:rotate-1 transition-all rotate-3 rounded-2xl shadow-xl m-2"
-        />
-      </div>
-
-      {/* Second Div (Text) */}
-      <div
-
-        className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1 col-span-1 animate__animated"
-      >
-        <div className="flex justify-center items-center w-full h-full flex-col p-20 max-lg:px-16 max-md:px-12 max-lg:pt-0">
-          <div className="text-4xl text-pinknew flex flex-row items-center">
-            <div className="w-5 h-1 bg-pinknew mr-5"></div>
-            About Me
-          </div>
-          <div className="text-xl mt-10">
-            An-An is a current student in Computer Engineering who loves coding, drawing, and designing. I’m interested in creating new innovations and possess strong leadership skills, along with the ability to effectively solve problems on the spot.
-          </div>
-        </div>
-      </div>
+            {/* Second Div (Text) */}
+            <div className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1 col-span-1 animate__animated">
+              <div className="flex justify-center items-center w-full h-full flex-col p-20 max-lg:px-16 max-md:px-12 max-lg:pt-0">
+                <div className="text-4xl text-pinknew flex flex-row items-center">
+                  <div className="w-5 h-1 bg-pinknew mr-5"></div>
+                  About Me
+                </div>
+                <div className="text-xl mt-10">
+                  An-An is a current student in Computer Engineering who loves
+                  coding, drawing, and designing. I’m interested in creating new
+                  innovations and possess strong leadership skills, along with
+                  the ability to effectively solve problems on the spot.
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="py-10 bg-rednew text-gray-300 h-auto flex justify-center mb-10">
@@ -517,8 +533,8 @@ export default function Home() {
           </div>
 
           <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12 ">
-            <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
-              <div className="w-5 h-1 bg-pinknew mr-5"></div>What I'm Doing
+            <div className="text-4xl text-pinknew  flex flex-row text-center items-center col-span-2 mb-10 justify-center">
+              What I'm Doing
             </div>
             <div className="flex flex-wrap gap-6 p-4 justify-center">
               <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 transition-all bg-white hover:bg-slate-200 shadow-lg rounded-lg p-6 text-center">
@@ -588,19 +604,276 @@ export default function Home() {
             <div className="bg-rednew"></div>
           </div>
 
+          <div className="w-full my-20 max-lg:my-16 max-md:my-12">
+            <Image src={banner} alt="banner" width={0} height={0} />
+          </div>
 
-              <div className="w-full my-20 max-lg:my-16 max-md:my-12">
-                <Image src={banner} alt="banner" width={0} height={0} />
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
+            <div className="text-4xl text-pinknew text-center flex flex-row items-center col-span-2 mb-10 justify-center">
+              Programming Language
+            </div>
+            <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2 mb-10">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105  hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={c} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">C</div>
+                <p className="text-gray-600 text-sm">
+                  powerful general-purpose programming language that has
+                  influenced many other languages, including C++, Java, and
+                  Python. It's widely used for system-level programming,
+                  embedded systems, and operating systems.
+                </p>
               </div>
-          <div className="text-4xl text-pinknew  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={cplus} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">C++</div>
+                <p className="text-gray-600 text-sm">
+                  extension of the C language with object-oriented programming
+                  features. It is used in various applications such as game
+                  development, system software, and performance-critical
+                  applications like real-time simulation systems.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={java} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Java</div>
+                <p className="text-gray-600 text-sm">
+                  high-level, class-based, object-oriented programming language
+                  designed to have as few implementation dependencies as
+                  possible. It's widely used for building enterprise-scale
+                  applications, Android apps, and large systems.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={dart} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Dart</div>
+                <p className="text-gray-600 text-sm">
+                  open-source programming language developed by Google. It is
+                  mainly used for building mobile, desktop, server, and web
+                  applications. It powers Flutter, Google's UI toolkit for
+                  building cross-platform applications.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={javascript} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">JavaScript</div>
+                <p className="text-gray-600 text-sm">
+                  programming language of the web, used both on the front-end
+                  and back-end. It powers interactive web pages and is commonly
+                  used with libraries and frameworks like React, Angular, and
+                  Node.js.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={python} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Python</div>
+                <p className="text-gray-600 text-sm">
+                  versatile, high-level programming language known for its
+                  simplicity and readability. It is widely used in data
+                  analysis, machine learning, web development, automation, and
+                  more.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={typescript} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">TypeScript</div>
+                <p className="text-gray-600 text-sm">
+                  superset of JavaScript that adds static typing, allowing
+                  developers to catch errors earlier in the development process.
+                  It’s increasingly popular in large-scale applications and
+                  works seamlessly with JavaScript libraries.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={php} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">PHP</div>
+                <p className="text-gray-600 text-sm">
+                  server-side scripting language designed for web development
+                  but also used as a general-purpose programming language. It is
+                  often used in building dynamic websites and content management
+                  systems like WordPress.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={go} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Go</div>
+                <p className="text-gray-600 text-sm">
+                  open-source programming language designed for efficiency and
+                  scalability. Developed by Google, it is used for building
+                  fast, reliable, and large-scale software systems, particularly
+                  for cloud services.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
+            <div className="text-4xl text-pinknew  flex flex-row items-center col-span-2 mb-10 justify-center">
+              <div className="w-5 h-1 bg-pinknew mr-5"></div>Tools
+            </div>
+            <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2">
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105  hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={figma} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Figma</div>
+                <p className="text-gray-600 text-sm">
+                  A web-based design tool for UI/UX design and collaboration.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={motiff} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Motiff</div>
+                <p className="text-gray-600 text-sm">
+                  Placeholder; possibly a design or productivity tool.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={vscode} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Vs Code</div>
+                <p className="text-gray-600 text-sm">
+                  A popular source code editor by Microsoft.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={android} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Android Studio</div>
+                <p className="text-gray-600 text-sm">
+                  The official IDE for Android app development.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={intellij} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">IntelliJ</div>
+                <p className="text-gray-600 text-sm">
+                  An integrated development environment (IDE) for Java and other
+                  languages.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={platformio} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Platformio</div>
+                <p className="text-gray-600 text-sm">
+                  PlatformIO is an open-source ecosystem for IoT development.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={notion} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Notion</div>
+                <p className="text-gray-600 text-sm">
+                  A productivity tool for note-taking and project management.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={linear} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Linear</div>
+                <p className="text-gray-600 text-sm">
+                  A tool for tracking issues and project management for software
+                  teams.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={azure} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Azure DevOps</div>
+                <p className="text-gray-600 text-sm">
+                  A set of tools for software development and version control.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={gamma} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Gamma</div>
+                <p className="text-gray-600 text-sm">
+                  Placeholder; may refer to a presentation or workflow tool.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={procreate} alt="uxui" width={75} height={75} />
+                </div>
+                <div className="text-xl font-semibold mb-4">Procreate</div>
+                <p className="text-gray-600 text-sm">
+                  A powerful digital painting app for iPad.
+                </p>
+              </div>
+
+              <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <Image src={clipstudio} alt="uxui" width={50} height={50} />
+                </div>
+                <div className="text-xl font-semibold mb-4">
+                  Clip Studio Paint
+                </div>
+                <p className="text-gray-600 text-sm">
+                  A drawing and painting software for illustrators and manga
+                  artists.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* <div className="text-4xl text-pinknew  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
             <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
           </div>
           <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 mt-5 ">
             <Carousel />
-          </div>
+          </div> */}
 
           <div className="mt-12"></div>
-
+          <div className="w-full mt-20 max-lg:mt-16 max-md:mt-12">
+            <Image src={cloud} alt="banner" width={0} height={0} />
+          </div>
           <Footer />
         </div>
       )}
@@ -616,4 +889,3 @@ export default function Home() {
     </main>
   );
 }
-
