@@ -595,11 +595,13 @@ export default function Home() {
           <div className="w-full my-20 max-lg:my-16 max-md:my-12">
             <Image src={banner} alt="banner" width={0} height={0} />
           </div>
-          <div className="text-4xl text-pinknew flex flex-row items-center col-span-2 mb-10 justify-center">
-            <div className="w-5 h-1 bg-pinknew mr-5"></div>Programming Language
-          </div>
+
+          <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
+            <div className="text-4xl text-pinknew text-center flex flex-row items-center col-span-2 mb-10 justify-center">
+Programming Language
+            </div>
           <div className="flex flex-wrap gap-6 p-4 justify-center col-span-2 mb-10">
-            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105 hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:scale-105  hover:bg-slate-200 transition-all bg-white shadow-lg rounded-lg p-6 text-center">
               <div className="flex justify-center mb-4">
               <Image src={c} alt="uxui" width={50} height={50} />
 
@@ -715,6 +717,7 @@ export default function Home() {
                 cloud services.
               </p>
             </div>
+          </div>
           </div>
 
           <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
@@ -843,7 +846,7 @@ export default function Home() {
           </div> */}
 
           <div className="mt-12"></div>
-          <div className="w-full mt-20 max-lg:my-16 max-md:my-12">
+          <div className="w-full mt-20 max-lg:mt-16 max-md:mt-12">
             <Image src={cloud} alt="banner" width={0} height={0} />
           </div>
           <Footer />
