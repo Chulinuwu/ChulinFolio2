@@ -14,6 +14,7 @@ import data from "../../public/data.svg";
 import cplus from "../../public/img/cplus.png";
 import c from "../../public/img/c.png";
 import go from "../../public/img/go.png";
+import banner2 from "../../public/img/banner2.png";
 import python from "../../public/img/python.png";
 import typescript from "../../public/img/typescript.png";
 import java from "../../public/img/java.png";
@@ -607,6 +608,16 @@ export default function Home() {
           <div className="w-full my-20 max-lg:my-16 max-md:my-12">
             <Image src={banner} alt="banner" width={0} height={0} />
           </div>
+          <div className="text-4xl text-pinknew mt-10  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
+            <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
+          </div>
+          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 mt-5 ">
+            <Carousel />
+          </div>
+
+          <div className="w-full my-20 ">
+            <Image src={banner2} alt="banner" width={0} height={0} />
+          </div>
 
           <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
             <div className="text-4xl text-pinknew text-center flex flex-row items-center col-span-2 mb-10 justify-center">
@@ -863,17 +874,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* <div className="text-4xl text-pinknew  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
-            <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
-          </div>
-          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 mt-5 ">
-            <Carousel />
-          </div> */}
+
 
           <div className="mt-12"></div>
           <div className="w-full mt-20 max-lg:mt-16 max-md:mt-12">
             <Image src={cloud} alt="banner" width={0} height={0} />
           </div>
+
           <Footer />
         </div>
       )}
