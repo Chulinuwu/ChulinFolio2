@@ -182,86 +182,28 @@ export default function Home() {
     <main className="w-full flex flex-col">
       {isClient && (
         <div className="w-full  h-full">
-          <nav
+                <nav
             className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
           >
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-[100%]">
               <a
-                href="#"
+                href="/"
                 className="flex items-center space-x-3 rtl:space-x-reverse "
               >
                 <span
-                  className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
+                  className={`font-semibold whitespace-nowrap ${textColor} text-4xl  max-md:text-xl   `}
                 >
                   Chulinxz
                 </span>
               </a>
-              <div
-                className="hidden w-full md:block md:w-auto"
-                id="navbar-default"
-              >
-                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-                  {/* <li>
-                    <a
-                      onClick={scrollToTop}
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
-                    >
-                      HOME
-                    </a>
-                  </li> */}
 
-                  {/* <li>
                     <a
-                      href="/uses"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      href="/projects"
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0  max-md:text-sm font-semibold cursor-pointer aria-current="page`}
                     >
-                      USES
+                      PROJECTS
                     </a>
-                  </li> */}
-                </ul>
-              </div>
-              {/* <div className="md:hidden">
-                <button
-                  onClick={handleOpen}
-                  className={`${textColor} focus:outline-none `}
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d={
-                        isOpen
-                          ? "M6 18L18 6M6 6l12 12"
-                          : "M4 6h16M4 12h16M4 18h16"
-                      }
-                    />
-                  </svg>
-                </button>
-              </div> */}
             </div>
-            {/* {isOpen && (
-              <div className="md:hidden m-7  ">
-                <Link
-                  href="/"
-                  className="flex justify-center items-center mb-3 bg-white rounded-md shadow-lg text-rednew py-2 hover:scale-105 transition-all hover:bg-slate-200"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/uses"
-                  className="flex   rounded-md justify-center items-center shadow-lg text-rednew bg-white py-2 hover:scale-105 transition-all hover:bg-slate-200"
-                >
-                  Uses
-                </Link>
-              </div>
-            )} */}
           </nav>
 
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
