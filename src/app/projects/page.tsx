@@ -232,7 +232,7 @@ export default function ProjectsPage() {
             </div>
           </div>
       <div className="w-full h-auto py-20 px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="text-2xl text-pinknew flex flex-row items-center justify-center mb-12">
+        <div className="text-2xl md:text-3xl lg:text-5xl text-pinknew flex flex-row items-center justify-center mb-12">
           My Projects
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -181,7 +181,7 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col">
       {isClient && (
-        <div className="w-full  h-full">
+        <div className="w-full bg-white  h-full">
                 <nav
             className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
           >
@@ -438,17 +438,19 @@ export default function Home() {
             </div>
 
             {/* Second Div (Text) */}
-            <div className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1 col-span-1 animate__animated">
-              <div className="flex justify-center items-center w-full h-full flex-col p-20 max-lg:px-16 max-md:px-12 max-lg:pt-0">
+            <div className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1  col-span-1 animate__animated">
+              <div className="flex justify-center items-center w-full h-full flex-col p-20  max-lg:px-16 max-md:px-12 max-lg:pt-0">
+                <div className="bg-white flex justify-center flex-col items-center px-5 py-12 rounded-xl rotate-[-3deg] ">
                 <div className="text-4xl text-pinknew flex flex-row items-center">
                   <div className="w-5 h-1 bg-pinknew mr-5"></div>
                   About Me
                 </div>
-                <div className="text-xl mt-10">
+                <div className="text-xl mt-10 ">
                   An-An is a current student in Computer Engineering who loves
                   coding, drawing, and designing. I’m interested in creating new
                   innovations and possess strong leadership skills, along with
                   the ability to effectively solve problems on the spot.
+                </div>
                 </div>
               </div>
             </div>
@@ -536,7 +538,7 @@ export default function Home() {
                 <div className="flex justify-center mb-4">
                   <Image src={data} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">Data Analyst</div>
+                <div className="text-xl font-semibold mb-4">AI/ML</div>
                 <p className="text-gray-600">
                   Just <span className="text-rednew">Beginner</span> with ML and
                   AI, know some basic , techniques for data analysis.
