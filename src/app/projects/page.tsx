@@ -268,6 +268,10 @@ export default function ProjectsPage() {
 ))}
         </div>
       </div>
+      <div className="mt-12"></div>
+          <div className="w-full mt-20 max-lg:mt-16 max-md:mt-12">
+            <Image src={cloud} alt="banner" width={0} height={0} />
+          </div>
       <Footer />
     </main>
   );
