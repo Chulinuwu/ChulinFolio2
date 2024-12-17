@@ -440,7 +440,7 @@ export default function Home() {
             {/* Second Div (Text) */}
             <div className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1  col-span-1 animate__animated">
               <div className="flex justify-center items-center w-full h-full flex-col p-20  max-lg:px-16 max-md:px-12 max-lg:pt-0">
-                <div className="bg-white flex justify-center flex-col items-center px-5 py-12 rounded-xl rotate-[-3deg] ">
+                <div className="bg-white flex justify-center flex-col items-center px-5 py-12 rounded-xl  ">
                 <div className="text-4xl text-pinknew flex flex-row items-center">
                   <div className="w-5 h-1 bg-pinknew mr-5"></div>
                   About Me
