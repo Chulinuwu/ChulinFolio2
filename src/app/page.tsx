@@ -14,6 +14,7 @@ import data from "../../public/data.svg";
 import cplus from "../../public/img/cplus.png";
 import c from "../../public/img/c.png";
 import go from "../../public/img/go.png";
+import banner2 from "../../public/img/banner2.png";
 import python from "../../public/img/python.png";
 import typescript from "../../public/img/typescript.png";
 import java from "../../public/img/java.png";
@@ -180,87 +181,29 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col">
       {isClient && (
-        <div className="w-full  h-full">
-          <nav
+        <div className="w-full bg-white  h-full">
+                <nav
             className={`fixed top-0 w-[100%] shadow-md z-50 transition-all duration-500 bg-white ${navbarColor}  ${navbarHeight} border-gray-200 dark:bg-gray-900`}
           >
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-[100%]">
               <a
-                href="#"
+                href="/"
                 className="flex items-center space-x-3 rtl:space-x-reverse "
               >
                 <span
-                  className={`font-semibold whitespace-nowrap ${textColor} text-4xl   `}
+                  className={`font-semibold whitespace-nowrap ${textColor} text-4xl  max-md:text-xl   `}
                 >
                   Chulinxz
                 </span>
               </a>
-              <div
-                className="hidden w-full md:block md:w-auto"
-                id="navbar-default"
-              >
-                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-                  {/* <li>
-                    <a
-                      onClick={scrollToTop}
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
-                    >
-                      HOME
-                    </a>
-                  </li> */}
 
-                  {/* <li>
                     <a
-                      href="/uses"
-                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0 font-semibold cursor-pointer aria-current="page`}
+                      href="/projects"
+                      className={`text-xl block py-2 px-3 ${textColor} bg-red-300 rounded bg-transparent hover:scale-105 transition-all md:p-0  max-md:text-sm font-semibold cursor-pointer aria-current="page`}
                     >
-                      USES
+                      PROJECTS
                     </a>
-                  </li> */}
-                </ul>
-              </div>
-              {/* <div className="md:hidden">
-                <button
-                  onClick={handleOpen}
-                  className={`${textColor} focus:outline-none `}
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d={
-                        isOpen
-                          ? "M6 18L18 6M6 6l12 12"
-                          : "M4 6h16M4 12h16M4 18h16"
-                      }
-                    />
-                  </svg>
-                </button>
-              </div> */}
             </div>
-            {/* {isOpen && (
-              <div className="md:hidden m-7  ">
-                <Link
-                  href="/"
-                  className="flex justify-center items-center mb-3 bg-white rounded-md shadow-lg text-rednew py-2 hover:scale-105 transition-all hover:bg-slate-200"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/uses"
-                  className="flex   rounded-md justify-center items-center shadow-lg text-rednew bg-white py-2 hover:scale-105 transition-all hover:bg-slate-200"
-                >
-                  Uses
-                </Link>
-              </div>
-            )} */}
           </nav>
 
           <div className="h-[100vh] w-full bg-gradient-to-b from-ppnew to-pinknew flex flex-row max-md:flex-col max-md:h-auto">
@@ -495,17 +438,19 @@ export default function Home() {
             </div>
 
             {/* Second Div (Text) */}
-            <div className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1 col-span-1 animate__animated">
-              <div className="flex justify-center items-center w-full h-full flex-col p-20 max-lg:px-16 max-md:px-12 max-lg:pt-0">
+            <div className="w-full max-lg:pl-0 max-lg:pt-20 max-sm:pt-1  col-span-1 animate__animated">
+              <div className="flex justify-center items-center w-full h-full flex-col p-20  max-lg:px-16 max-md:px-12 max-lg:pt-0">
+                <div className="bg-white flex justify-center flex-col items-center px-5 py-12 rounded-xl rotate-[-3deg] ">
                 <div className="text-4xl text-pinknew flex flex-row items-center">
                   <div className="w-5 h-1 bg-pinknew mr-5"></div>
                   About Me
                 </div>
-                <div className="text-xl mt-10">
+                <div className="text-xl mt-10 ">
                   An-An is a current student in Computer Engineering who loves
                   coding, drawing, and designing. I’m interested in creating new
                   innovations and possess strong leadership skills, along with
                   the ability to effectively solve problems on the spot.
+                </div>
                 </div>
               </div>
             </div>
@@ -593,7 +538,7 @@ export default function Home() {
                 <div className="flex justify-center mb-4">
                   <Image src={data} alt="uxui" width={50} height={50} />
                 </div>
-                <div className="text-xl font-semibold mb-4">Data Analyst</div>
+                <div className="text-xl font-semibold mb-4">AI/ML</div>
                 <p className="text-gray-600">
                   Just <span className="text-rednew">Beginner</span> with ML and
                   AI, know some basic , techniques for data analysis.
@@ -607,6 +552,16 @@ export default function Home() {
           <div className="w-full my-20 max-lg:my-16 max-md:my-12">
             <Image src={banner} alt="banner" width={0} height={0} />
           </div>
+          {/* <div className="text-4xl text-pinknew mt-10  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
+            <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
+          </div>
+          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 mt-5 ">
+            <Carousel />
+          </div>
+
+          <div className="w-full my-20 max-md:my-12 ">
+            <Image src={banner2} alt="banner" width={0} height={0} />
+          </div> */}
 
           <div className="w-full h-auto grid grid-flow-row py-10 max-lg:p-16 max-md:p-12">
             <div className="text-4xl text-pinknew text-center flex flex-row items-center col-span-2 mb-10 justify-center">
@@ -863,17 +818,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* <div className="text-4xl text-pinknew  flex flex-row items-center max-lg:p-x16 max-md:px-12 max-lg:mb-0 max-lg: col-span-2 mb-10 justify-center">
-            <div className="w-5 h-1 bg-pinknew mr-5"></div>Contribution (2023)
-          </div>
-          <div className="w-full h-[650px] max-lg:h-[400px] max-md:h-[300px] flex items-center justify-center p-24 max-lg:p-16 max-md:p-10 mt-5 ">
-            <Carousel />
-          </div> */}
+
 
           <div className="mt-12"></div>
           <div className="w-full mt-20 max-lg:mt-16 max-md:mt-12">
             <Image src={cloud} alt="banner" width={0} height={0} />
           </div>
+
           <Footer />
         </div>
       )}
