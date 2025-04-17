@@ -708,7 +708,7 @@ export default function Home() {
                 </div>
                 <div className="text-xl font-semibold mb-4">Motiff</div>
                 <p className="text-gray-600 text-sm">
-                  Placeholder; possibly a design or productivity tool.
+                  possibly a design or productivity tool.
                 </p>
               </div>
 
@@ -790,7 +790,7 @@ export default function Home() {
                 </div>
                 <div className="text-xl font-semibold mb-4">Gamma</div>
                 <p className="text-gray-600 text-sm">
-                  Placeholder; may refer to a presentation or workflow tool.
+                  a presentation or workflow tool.
                 </p>
               </div>
 
@@ -819,6 +819,8 @@ export default function Home() {
             </div>
           </div>
 
+
+            
 
           <div className="mt-12"></div>
           <div className="w-full mt-20 max-lg:mt-16 max-md:mt-12">
