@@ -111,12 +111,36 @@ export default function ProjectsPage() {
 
   const projects: Project[] = [
     {
+      name: "One-Day Online Multiplayer Board Game",
+      description: "A one-day project to create an online multiplayer board game in intania hackathon.",
+      explanation: "This project uses Socket.io for real-time communication, Golang for the backend and Svelte for the frontend. It allows multiple players to join a game room and play together online.",
+      role: "Full-stack Developer",
+      link: "https://github.com/Chulinuwu/Smart_Farm_Plant_Monitoring_System",
+      image: "/img/project8.png",
+    },
+    {
       name: "Real-time AI Leaf Disease Detection",
       description: "A real-time system for detecting plant leaf diseases using deep learning.",
       explanation: "This project uses ESP32 for communication, Svelte for the frontend, and Python Flask for the backend. It integrates with Blynk Cloud, Google Sheets, and sends alerts through WhatsApp via Twilio and Gmail. The system includes two ESP32s that communicate with each other via Wi-Fi.",
       role: "Full-stack Developer",
       link: "https://github.com/Chulinuwu/Smart_Farm_Plant_Monitoring_System",
       image: "/img/project1.jpg",
+    },
+    {
+      name: "Gear Festival 2025",
+      description: "An interactive charity event website built with Astro and React.",
+      explanation: "This project features an engaging platform where users can explore event details, enjoy music performances, and make donations. The funds collected are directed toward helping underprivileged children. Our team created an interactive experience to raise awareness and encourage contributions through a beautifully designed and responsive interface.",
+      role: "Frontend Developer",
+      link: "https://www.gearfest2025.com/",
+      image: "/img/project10.png",
+    },    
+    {
+      name: "Croissant Shop",
+      description: "A three day project with a full stack system for a convenience store.",
+      explanation: "This project uses Java Springboot for the backend and Svelte for the frontend. Shop managers can manage their inventory and sales through a dashboard, while customers can view the menu and place orders.",
+      role: "Full-stack Developer",
+      link: "https://github.com/Chulinuwu/Reactjs_Springboot",
+      image: "/img/project9.png",
     },
     {
       name: "QR Code Generator",
